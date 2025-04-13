@@ -147,7 +147,10 @@
         // Initialize projects and slider on page load
         document.addEventListener('DOMContentLoaded', async function() {
             await initializeMainPage();
-            initializeSlider();
+            // Wait for the next frame to ensure projects are rendered
+            requestAnimationFrame(() => {
+                initializeSlider();
+            });
             
             // Initialize social media links
             document.getElementById('linkedin-link').href = window.siteConfig.socialMedia.linkedin;
