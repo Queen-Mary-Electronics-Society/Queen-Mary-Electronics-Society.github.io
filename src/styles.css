@@ -319,7 +319,8 @@ nav {
 
 .cta-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -327,7 +328,6 @@ nav {
 .cta-card {
     text-decoration: none;
     color: var(--text-color);
-    padding: 2rem;
     border-radius: 12px;
     text-align: center;
     transition: transform 0.3s ease;
@@ -335,23 +335,38 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
+    width: 100%;
+}
+
+.cta-card.join,
+.cta-card.sponsor {
+    aspect-ratio: 1046/465;
+}
+
+.cta-card.contact {
+    aspect-ratio: 1571/303;
+    grid-column: 1 / -1;
+}
+
+.cta-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
 }
 
 .cta-card:hover {
     transform: translateY(-5px);
-}
-
-.cta-card.join {
-    background-color: #007bff;
-}
-
-.cta-card.sponsor {
-    background-color: #00a651;
-}
-
-.cta-card.contact {
-    background-color: #ff4b4b;
 }
 
 .cta-content {
@@ -359,21 +374,19 @@ nav {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-}
-
-.cta-card img {
-    width: 80px;
-    height: 80px;
-    padding: 16px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    padding: 2rem;
 }
 
 .cta-card h3 {
     color: white;
     font-size: 1.5rem;
     margin-top: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Footer */
@@ -439,6 +452,15 @@ footer {
 
     .hero-content h1 {
         font-size: 3rem;
+    }
+
+    .cta-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .cta-card.contact {
+        grid-column: auto;
     }
 }
 
