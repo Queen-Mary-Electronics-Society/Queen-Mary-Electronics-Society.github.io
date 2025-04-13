@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QMES - Queen Mary Robotics and Electronics Society</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
 </head>
 <body>
     <header>
@@ -15,7 +16,7 @@
             <div class="nav-links">
                 <a href="#join">Join</a>
                 <a href="#about">About us</a>
-                <a href="#projects">Projects</a>
+                <a href="projects.html">Projects</a>
                 <a href="#contact">Contact us</a>
             </div>
         </nav>
@@ -46,9 +47,9 @@
                     <div class="project-card">
                         <div class="project-info">
                             <h3>Micro line followers</h3>
-                            <p class="project-date">07.2021 - <a href="#" class="ongoing">ongoing</a></p>
-                            <p>This project focuses on building analog line follower robots. You will design your own pcb, solder components and create a small robot. At the end of a project there will be a small competition between all robots and the winner of it!</p>
-                            <a href="#" class="learn-more">Learn More</a>
+                            <p class="project-date">07.2021 - <span class="ongoing">ongoing</span></p>
+                            <p>This project focuses on building analog line follower robots. You will design your own pcb, solder components and create a small robot.</p>
+                            <a href="projects.html" class="learn-more">Learn More</a>
                         </div>
                         <div class="project-image">
                             <img src="../assets/project-1.png" alt="Line follower robot">
@@ -57,9 +58,9 @@
                     <div class="project-card">
                         <div class="project-info">
                             <h3>Arduino Workshop</h3>
-                            <p class="project-date">09.2021 - <a href="#" class="ongoing">ongoing</a></p>
-                            <p>Learn the basics of Arduino programming and electronics. Build your own interactive projects and understand the fundamentals of microcontroller programming.</p>
-                            <a href="#" class="learn-more">Learn More</a>
+                            <p class="project-date">09.2021 - <span class="ongoing">ongoing</span></p>
+                            <p>Learn the basics of Arduino programming and electronics. Build your own interactive projects.</p>
+                            <a href="projects.html" class="learn-more">Learn More</a>
                         </div>
                         <div class="project-image">
                             <img src="../assets/project-1.png" alt="Arduino project">
@@ -68,9 +69,9 @@
                     <div class="project-card">
                         <div class="project-info">
                             <h3>Robotics Arm</h3>
-                            <p class="project-date">10.2021 - <a href="#" class="ongoing">ongoing</a></p>
-                            <p>Design and build a 6-axis robotic arm using 3D printing and servo motors. Learn about inverse kinematics and robot control systems.</p>
-                            <a href="#" class="learn-more">Learn More</a>
+                            <p class="project-date">10.2021 - <span class="ongoing">ongoing</span></p>
+                            <p>Design and build a 6-axis robotic arm using 3D printing and servo motors.</p>
+                            <a href="projects.html" class="learn-more">Learn More</a>
                         </div>
                         <div class="project-image">
                             <img src="../assets/project-1.png" alt="Robotics arm">
@@ -79,9 +80,9 @@
                     <div class="project-card">
                         <div class="project-info">
                             <h3>PCB Design</h3>
-                            <p class="project-date">11.2021 - <a href="#" class="ongoing">ongoing</a></p>
-                            <p>Learn professional PCB design using industry-standard tools. Create your own electronic circuits from scratch.</p>
-                            <a href="#" class="learn-more">Learn More</a>
+                            <p class="project-date">11.2021 - <span class="ongoing">ongoing</span></p>
+                            <p>Learn professional PCB design using industry-standard tools.</p>
+                            <a href="projects.html" class="learn-more">Learn More</a>
                         </div>
                         <div class="project-image">
                             <img src="../assets/project-1.png" alt="PCB Design">
@@ -89,24 +90,46 @@
                     </div>
                     <div class="project-card">
                         <div class="project-info">
-                            <h3>Drone Building</h3>
-                            <p class="project-date">01.2022 - <a href="#" class="ongoing">ongoing</a></p>
-                            <p>Build your own custom drone from scratch. Learn about flight controllers, motors, and wireless communication.</p>
-                            <a href="#" class="learn-more">Learn More</a>
+                            <h3>Robot Vision System</h3>
+                            <p class="project-date">09.2022 - <span class="ongoing">ongoing</span></p>
+                            <p>Implement computer vision algorithms for robot navigation and object detection.</p>
+                            <a href="projects.html" class="learn-more">Learn More</a>
                         </div>
                         <div class="project-image">
-                            <img src="../assets/project-1.png" alt="Drone project">
+                            <img src="../assets/project-1.png" alt="Robot Vision">
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Audio Synthesizer</h3>
+                            <p class="project-date">11.2022 - 06.2023</p>
+                            <p>Build an analog synthesizer with digital control interface.</p>
+                            <a href="projects.html" class="learn-more">Learn More</a>
+                        </div>
+                        <div class="project-image">
+                            <img src="../assets/project-1.png" alt="Audio Synthesizer">
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Autonomous RC Car</h3>
+                            <p class="project-date">02.2023 - <span class="ongoing">ongoing</span></p>
+                            <p>Convert a regular RC car into an autonomous vehicle using ROS and sensors.</p>
+                            <a href="projects.html" class="learn-more">Learn More</a>
+                        </div>
+                        <div class="project-image">
+                            <img src="../assets/project-1.png" alt="Autonomous RC Car">
                         </div>
                     </div>
                 </div>
-                <div class="slider-controls">
-                    <button class="prev-btn">❮</button>
-                    <div class="slider-dots"></div>
-                    <button class="next-btn">❯</button>
+                <div class="slider-track">
+                    <div class="slider-bar">
+                        <div class="slider-handle"></div>
+                    </div>
                 </div>
             </div>
             <div class="see-more">
-                <button class="see-more-btn">See More Projects</button>
+                <a href="projects.html" class="see-more-btn">See More Projects</a>
             </div>
         </section>
 
@@ -175,9 +198,9 @@
             <div class="footer-section">
                 <h4>Social Media:</h4>
                 <ul>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Github</a></li>
-                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#" id="linkedin-link">LinkedIn</a></li>
+                    <li><a href="#" id="github-link">Github</a></li>
+                    <li><a href="#" id="instagram-link">Instagram</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -186,7 +209,7 @@
             </div>
             <div class="footer-section">
                 <h4>Contact Details:</h4>
-                <p>Email</p>
+                <p><a href="#" id="email-link">Email</a></p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -195,60 +218,108 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Social media links setup...
+
             const slider = document.querySelector('.project-cards');
             const cards = document.querySelectorAll('.project-card');
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
-            const dotsContainer = document.querySelector('.slider-dots');
+            const handle = document.querySelector('.slider-handle');
+            const sliderBar = document.querySelector('.slider-bar');
             
-            let currentIndex = 0;
-            const cardsToShow = 3;
-            const totalSlides = Math.ceil(cards.length / cardsToShow);
-
-            // Create dots
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('div');
-                dot.classList.add('dot');
-                if (i === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => goToSlide(i));
-                dotsContainer.appendChild(dot);
+            let isDragging = false;
+            let startX;
+            let startScrollLeft;
+            
+            function updateSliderPosition(scrollPercentage) {
+                const boundedPercentage = Math.max(0, Math.min(1, scrollPercentage));
+                const trackWidth = sliderBar.offsetWidth - handle.offsetWidth;
+                const handlePosition = boundedPercentage * trackWidth;
+                handle.style.left = `${handlePosition}px`;
             }
 
-            function updateSlider() {
-                const offset = currentIndex * -100;
-                slider.style.transform = `translateX(${offset}%)`;
+            function handleSliderMove(clientX) {
+                if (!isDragging) return;
                 
-                // Update dots
-                document.querySelectorAll('.dot').forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentIndex);
-                });
-
-                // Update button states
-                prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-                nextBtn.style.opacity = currentIndex === totalSlides - 1 ? '0.5' : '1';
+                const rect = sliderBar.getBoundingClientRect();
+                const handleWidth = handle.offsetWidth;
+                const x = clientX - rect.left - (handleWidth / 2);
+                const maxX = rect.width - handleWidth;
+                const boundedX = Math.max(0, Math.min(maxX, x));
+                
+                const scrollPercentage = boundedX / maxX;
+                const maxScroll = slider.scrollWidth - slider.clientWidth;
+                slider.scrollLeft = scrollPercentage * maxScroll;
+                
+                updateSliderPosition(scrollPercentage);
             }
 
-            function goToSlide(index) {
-                currentIndex = index;
-                updateSlider();
-            }
-
-            prevBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateSlider();
-                }
+            // Handle dragging
+            handle.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                handle.classList.add('active');
+                startX = e.clientX - handle.offsetLeft;
+                startScrollLeft = slider.scrollLeft;
+                document.body.style.userSelect = 'none';
             });
 
-            nextBtn.addEventListener('click', () => {
-                if (currentIndex < totalSlides - 1) {
-                    currentIndex++;
-                    updateSlider();
-                }
+            document.addEventListener('mousemove', (e) => {
+                handleSliderMove(e.clientX);
             });
 
-            // Initialize slider
-            updateSlider();
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                handle.classList.remove('active');
+                document.body.style.userSelect = '';
+            });
+
+            // Handle slider bar clicks
+            sliderBar.addEventListener('click', (e) => {
+                if (e.target === handle) return;
+                
+                const rect = sliderBar.getBoundingClientRect();
+                const handleWidth = handle.offsetWidth;
+                const x = e.clientX - rect.left - (handleWidth / 2);
+                const maxX = rect.width - handleWidth;
+                const boundedX = Math.max(0, Math.min(maxX, x));
+                
+                const scrollPercentage = boundedX / maxX;
+                const maxScroll = slider.scrollWidth - slider.clientWidth;
+                slider.scrollLeft = scrollPercentage * maxScroll;
+                
+                updateSliderPosition(scrollPercentage);
+            });
+
+            // Update handle position on scroll
+            let scrollTimeout;
+            slider.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    const scrollPercentage = slider.scrollLeft / (slider.scrollWidth - slider.clientWidth);
+                    updateSliderPosition(scrollPercentage);
+                }, 10);
+            });
+
+            // Handle touch events
+            handle.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                handle.classList.add('active');
+                const touch = e.touches[0];
+                startX = touch.clientX - handle.offsetLeft;
+                startScrollLeft = slider.scrollLeft;
+            });
+
+            document.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                handleSliderMove(e.touches[0].clientX);
+            });
+
+            document.addEventListener('touchend', () => {
+                isDragging = false;
+                handle.classList.remove('active');
+            });
+
+            // Initialize slider position
+            updateSliderPosition(0);
         });
     </script>
 </body>
