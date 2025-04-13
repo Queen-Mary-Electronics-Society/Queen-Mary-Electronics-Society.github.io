@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - QMES</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="config.js"></script>
 </head>
 <body>
     <header>
@@ -27,117 +26,35 @@
     </div>
 
     <main class="projects-page">
-        <h1>Projects</h1>
-        
-        <div class="projects-search">
-            <div class="search-bar">
-                <div class="search-input-group">
-                    <input type="text" id="projectSearch" placeholder="Type / to Search">
-                    <button class="search-btn">Search</button>
-                </div>
-                <div class="date-filter">
-                    <label>From</label>
-                    <input type="date" id="dateFrom" value="2004-12-23">
-                    <label>till</label>
-                    <input type="date" id="dateTo">
-                </div>
-                <div class="archive-toggle">
-                    <input type="checkbox" id="showArchived">
-                    <label for="showArchived">Show archived projects</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="../assets/project-1.png" alt="Micro line followers">
-                <div class="project-info">
-                    <h3>Micro line followers</h3>
-                    <p class="project-date">07.2021 - <span class="ongoing">ongoing</span></p>
-                    <p>This project focuses on building analog line follower robots. You will design your own pcb, solder components and create a small robot.</p>
+        <section class="projects-section">
+            <h1>Our Projects</h1>
+            
+            <div class="projects-search">
+                <div class="search-bar">
+                    <div class="search-input-group">
+                        <input type="text" id="projectSearch" placeholder="Type / to Search">
+                        <button class="search-btn">Search</button>
+                    </div>
+                    <div class="date-filter">
+                        <label>From</label>
+                        <input type="date" id="dateFrom">
+                        <label>till</label>
+                        <input type="date" id="dateTo">
+                    </div>
+                    <div class="archive-toggle">
+                        <input type="checkbox" id="showArchived">
+                        <label for="showArchived">Show archived projects</label>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <img src="../assets/project-1.png" alt="Arduino Workshop">
-                <div class="project-info">
-                    <h3>Arduino Workshop</h3>
-                    <p class="project-date">09.2021 - <span class="ongoing">ongoing</span></p>
-                    <p>Learn the basics of Arduino programming and electronics. Build your own interactive projects.</p>
-                </div>
+            <div class="projects-list">
+                <!-- Projects will be loaded dynamically here -->
             </div>
+        </section>
 
-            <div class="project-card">
-                <img src="../assets/project-1.png" alt="Robotics Arm">
-                <div class="project-info">
-                    <h3>Robotics Arm</h3>
-                    <p class="project-date">10.2021 - <span class="ongoing">ongoing</span></p>
-                    <p>Design and build a 6-axis robotic arm using 3D printing and servo motors.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="../assets/project-1.png" alt="PCB Design">
-                <div class="project-info">
-                    <h3>PCB Design</h3>
-                    <p class="project-date">11.2021 - <span class="ongoing">ongoing</span></p>
-                    <p>Learn professional PCB design using industry-standard tools.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="../assets/project-1.png" alt="Drone Building">
-                <div class="project-info">
-                    <h3>Drone Building</h3>
-                    <p class="project-date">01.2022 - <span class="ongoing">ongoing</span></p>
-                    <p>Build your own custom drone from scratch. Learn about flight controllers and motors.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="../assets/project-1.png" alt="IoT Weather Station">
-                <div class="project-info">
-                    <h3>IoT Weather Station</h3>
-                    <p class="project-date">03.2022 - 12.2022</p>
-                    <p>Create a connected weather station using ESP32 and various sensors.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="../assets/project-1.png" alt="Smart Home Automation">
-                <div class="project-info">
-                    <h3>Smart Home Automation</h3>
-                    <p class="project-date">05.2022 - 02.2023</p>
-                    <p>Develop a complete home automation system with custom PCBs and software.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="../assets/project-1.png" alt="Robot Vision System">
-                <div class="project-info">
-                    <h3>Robot Vision System</h3>
-                    <p class="project-date">09.2022 - <span class="ongoing">ongoing</span></p>
-                    <p>Implement computer vision algorithms for robot navigation and object detection.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="../assets/project-1.png" alt="Audio Synthesizer">
-                <div class="project-info">
-                    <h3>Audio Synthesizer</h3>
-                    <p class="project-date">11.2022 - 06.2023</p>
-                    <p>Build an analog synthesizer with digital control interface.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="../assets/project-1.png" alt="Autonomous RC Car">
-                <div class="project-info">
-                    <h3>Autonomous RC Car</h3>
-                    <p class="project-date">02.2023 - <span class="ongoing">ongoing</span></p>
-                    <p>Convert a regular RC car into an autonomous vehicle using ROS and sensors.</p>
-                </div>
-            </div>
+        <div class="project-container">
+            <!-- Individual project content will be loaded here when viewing a specific project -->
         </div>
     </main>
 
@@ -165,46 +82,71 @@
         </div>
     </footer>
 
-    <script>
-        // Initialize social media links
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set up social media links
-            document.getElementById('linkedin-link').href = window.siteConfig.socialMedia.linkedin;
-            document.getElementById('github-link').href = window.siteConfig.socialMedia.github;
-            document.getElementById('instagram-link').href = window.siteConfig.socialMedia.instagram;
-            document.getElementById('email-link').href = 'mailto:' + window.siteConfig.contact.email;
+    <script type="module">
+        import { initializeProjectsPage, initializeProjectPage } from './js/projects.js';
+        
+        // Check if we're on a specific project page
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('project');
+        
+        if (projectId) {
+            // Load specific project
+            initializeProjectPage(projectId);
+            document.querySelector('.projects-search').style.display = 'none';
+            document.querySelector('.projects-list').style.display = 'none';
+        } else {
+            // Load projects list
+            initializeProjectsPage();
             
-            // Initialize date inputs
-            document.getElementById('dateTo').valueAsDate = new Date();
-            
+            // Initialize search functionality
+            const searchInput = document.getElementById('projectSearch');
+            const searchBtn = document.querySelector('.search-btn');
+            const dateFrom = document.getElementById('dateFrom');
+            const dateTo = document.getElementById('dateTo');
+            const showArchived = document.getElementById('showArchived');
+
+            // Set default dates
+            const today = new Date();
+            dateTo.valueAsDate = today;
+            const defaultFromDate = new Date('2004-12-23');
+            dateFrom.valueAsDate = defaultFromDate;
+
             // Search functionality
-            document.querySelector('.search-btn').addEventListener('click', function() {
-                const searchTerm = document.getElementById('projectSearch').value.toLowerCase();
-                const dateFrom = new Date(document.getElementById('dateFrom').value);
-                const dateTo = new Date(document.getElementById('dateTo').value);
-                const showArchived = document.getElementById('showArchived').checked;
-                
-                document.querySelectorAll('.project-card').forEach(card => {
-                    const title = card.querySelector('h3').textContent.toLowerCase();
-                    const description = card.querySelector('.project-info p:last-child').textContent.toLowerCase();
-                    const dateText = card.querySelector('.project-date').textContent;
-                    const isArchived = !card.querySelector('.ongoing');
+            function filterProjects() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const fromDate = dateFrom.valueAsDate;
+                const toDate = dateTo.valueAsDate;
+                const archived = showArchived.checked;
+
+                document.querySelectorAll('.project-card').forEach(project => {
+                    const title = project.querySelector('h3').textContent.toLowerCase();
+                    const summary = project.querySelector('.project-info p:nth-child(3)').textContent.toLowerCase();
+                    const dateStr = project.querySelector('.project-date').textContent;
+                    const projectDate = new Date(dateStr);
                     
-                    const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
-                    const matchesArchive = showArchived || !isArchived;
-                    
-                    card.style.display = matchesSearch && matchesArchive ? 'block' : 'none';
+                    const matchesSearch = title.includes(searchTerm) || summary.includes(searchTerm);
+                    const matchesDate = (!fromDate || projectDate >= fromDate) && 
+                                      (!toDate || projectDate <= toDate);
+
+                    project.style.display = matchesSearch && matchesDate ? 'flex' : 'none';
                 });
-            });
+            }
+
+            // Event listeners
+            searchBtn.addEventListener('click', filterProjects);
+            searchInput.addEventListener('input', filterProjects);
+            dateFrom.addEventListener('change', filterProjects);
+            dateTo.addEventListener('change', filterProjects);
+            showArchived.addEventListener('change', filterProjects);
 
             // Keyboard shortcut for search
             document.addEventListener('keydown', function(e) {
-                if (e.key === '/') {
+                if (e.key === '/' && document.activeElement !== searchInput) {
                     e.preventDefault();
-                    document.getElementById('projectSearch').focus();
+                    searchInput.focus();
                 }
             });
-        });
+        }
     </script>
 </body>
 </html> 
