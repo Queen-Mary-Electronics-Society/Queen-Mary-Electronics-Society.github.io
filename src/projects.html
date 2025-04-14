@@ -27,7 +27,9 @@
 
     <main class="projects-page">
         <section class="projects-section">
-            <h1>Our Projects</h1>
+            <div class="project-title-section">
+                <!-- This will be populated dynamically based on whether we're viewing a specific project or the list -->
+            </div>
             
             <div class="projects-search">
                 <div class="search-bar">
@@ -97,6 +99,7 @@
         } else {
             // Load projects list
             initializeProjectsPage();
+            document.querySelector('.project-title-section').innerHTML = '<h1>Our Projects</h1>';
             
             // Initialize search functionality
             const searchInput = document.getElementById('projectSearch');

@@ -73,13 +73,6 @@ function renderProjectPage(project) {
 
     return `
         <article class="project-full">
-            <header class="project-header">
-                <h1>${project.title}</h1>
-                <div class="project-meta">
-                    <span class="date">${project.date}</span>
-                    <span class="author">by ${project.author}</span>
-                </div>
-            </header>
             <div class="project-introduction">
                 ${project.content.introduction}
             </div>
@@ -118,6 +111,19 @@ async function initializeProjectsPage() {
 async function initializeProjectPage(projectId) {
     const project = await loadProject(projectId);
     if (project) {
+        // Update the title section
+        const titleSection = document.querySelector('.project-title-section');
+        if (titleSection) {
+            titleSection.innerHTML = `
+                <h1>${project.title}</h1>
+                <div class="project-meta">
+                    <span class="date">${project.date}</span>
+                    <span class="author">by ${project.author}</span>
+                </div>
+            `;
+        }
+
+        // Update the content container
         const container = document.querySelector('.project-container');
         if (container) {
             container.innerHTML = renderProjectPage(project);

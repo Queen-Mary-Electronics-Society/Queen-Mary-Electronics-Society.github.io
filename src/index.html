@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QMES - Queen Mary Robotics and Electronics Society</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
@@ -14,10 +14,10 @@
                 <img src="../assets/qmul-logo.png" alt="QMES Logo">
             </div>
             <div class="nav-links">
-                <a href="#join">Join</a>
+                <a href="#" id="nav-join-link" target="_blank" rel="noopener noreferrer">Join</a>
                 <a href="#about">About us</a>
                 <a href="projects.html">Projects</a>
-                <a href="#contact">Contact us</a>
+                <a href="contact.html">Contact us</a>
             </div>
         </nav>
     </header>
@@ -95,17 +95,17 @@
         <section class="cta-section">
             <h2>Sounds interesting?</h2>
             <div class="cta-grid">
-                <a href="#join" class="cta-card join" style="background-image: url('../assets/robot-arm.jpg')">
+                <a href="https://www.qmsu.org/groups/qmml/" class="cta-card join" style="background-image: url('../assets/robot-arm.jpg')" target="_blank" rel="noopener noreferrer">
                     <div class="cta-content">
                         <h3>Join us</h3>
                     </div>
                 </a>
-                <a href="#sponsor" class="cta-card sponsor" style="background-image: url('../assets/money.jpg')">
+                <a href="contact.html" class="cta-card sponsor" style="background-image: url('../assets/money.jpg')">
                     <div class="cta-content">
                         <h3>Sponsor us</h3>
                     </div>
                 </a>
-                <a href="#contact" class="cta-card contact" style="background-image: url('../assets/contact.jpg')">
+                <a href="contact.html" class="cta-card contact" style="background-image: url('../assets/contact.jpg')">
                     <div class="cta-content">
                         <h3>Contact us</h3>
                     </div>
@@ -119,9 +119,10 @@
             <div class="footer-section">
                 <h4>Social Media:</h4>
                 <ul>
-                    <li><a href="#" id="linkedin-link">LinkedIn</a></li>
-                    <li><a href="#" id="github-link">Github</a></li>
-                    <li><a href="#" id="instagram-link">Instagram</a></li>
+                    <li><a href="#" id="linkedin-link"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="#" id="github-link"><i class="fab fa-github"></i> Github</a></li>
+                    <li><a href="#" id="instagram-link"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#" id="discord-link"><i class="fab fa-discord"></i> Discord</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -137,23 +138,78 @@
             <p>Powered by <a href="#">Jekyll</a> and my sleepless nights &nbsp;&nbsp; Hosted by <a href="#">Github</a></p>
         </div>
     </footer>
+    <!-- Load config first -->
+    <script src="./config.js"></script>
+    
+    <!-- Initialize links after config is loaded -->
+    <script>
+        // Check if config is loaded
+        console.log('Initial config check:', window.siteConfig);
+
+        function initializeLinks() {
+            console.log('Checking config:', window.siteConfig);
+            
+            if (!window.siteConfig) {
+                console.error('Config not loaded yet, retrying in 100ms');
+                setTimeout(initializeLinks, 100);
+                return;
+            }
+
+            console.log('Config loaded successfully:', {
+                hyperlinks: window.siteConfig.hyperlinks,
+                socialMedia: window.siteConfig.socialMedia
+            });
+
+            // Initialize join link in nav
+            const navJoinLink = document.getElementById('nav-join-link');
+            if (navJoinLink && window.siteConfig.hyperlinks) {
+                navJoinLink.href = window.siteConfig.hyperlinks.QMSU_GROUP;
+                console.log('Set join link href to:', navJoinLink.href);
+            }
+
+            // Initialize social media links
+            const socialLinks = {
+                'linkedin-link': window.siteConfig.socialMedia.linkedin,
+                'github-link': window.siteConfig.socialMedia.github,
+                'instagram-link': window.siteConfig.socialMedia.instagram,
+                'discord-link': window.siteConfig.socialMedia.discord,
+                'email-link': 'mailto:' + window.siteConfig.contact.email
+            };
+
+            // Set each social media link
+            Object.entries(socialLinks).forEach(([id, url]) => {
+                const element = document.getElementById(id);
+                if (element && url) {
+                    element.href = url;
+                    console.log(`Set ${id} href to:`, url);
+                } else {
+                    console.error(`Could not set link for ${id}:`, {
+                        element: element ? element.outerHTML : null,
+                        url: url
+                    });
+                }
+            });
+        }
+
+        // Start initialization when DOM is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeLinks);
+        } else {
+            initializeLinks();
+        }
+    </script>
+
+    <!-- Initialize projects after links -->
     <script type="module">
         import { initializeMainPage } from './js/projects.js';
         import { initializeSlider } from './js/slider.js';
         
-        // Initialize projects and slider on page load
+        // Initialize projects and slider
         document.addEventListener('DOMContentLoaded', async function() {
             await initializeMainPage();
-            // Wait for the next frame to ensure projects are rendered
             requestAnimationFrame(() => {
                 initializeSlider();
             });
-            
-            // Initialize social media links
-            document.getElementById('linkedin-link').href = window.siteConfig.socialMedia.linkedin;
-            document.getElementById('github-link').href = window.siteConfig.socialMedia.github;
-            document.getElementById('instagram-link').href = window.siteConfig.socialMedia.instagram;
-            document.getElementById('email-link').href = 'mailto:' + window.siteConfig.contact.email;
         });
     </script>
 </body>
