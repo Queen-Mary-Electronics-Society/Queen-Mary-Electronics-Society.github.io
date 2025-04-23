@@ -1,7 +1,7 @@
 // Function to load project data
 async function loadProject(projectId) {
     try {
-        const response = await fetch(`/src/projects/${projectId}.json`);
+        const response = await fetch(`projects/${projectId}.json`);
         if (!response.ok) {
             console.error(`Failed to load project ${projectId}:`, response.status, response.statusText);
             throw new Error('Project not found');

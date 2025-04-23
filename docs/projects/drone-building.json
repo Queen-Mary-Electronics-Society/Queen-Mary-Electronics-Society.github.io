@@ -6,20 +6,20 @@
     "author": "Alex Thompson",
     "summary": "Build and program custom quadcopter drones, learning about flight dynamics, control systems, and aerial robotics.",
     "featured": true,
-    "thumbnail": "../assets/projects/drone-building/thumbnail.jpg",
+    "thumbnail": "assets/projects/drone-building/thumbnail.jpg",
     "content": {
         "introduction": "The Custom Drone Building project takes students through the process of designing, building, and programming their own quadcopter drones. From understanding flight physics to implementing autonomous flight features, this project covers all aspects of modern drone technology.",
         "sections": [
             {
                 "title": "Hardware Assembly",
                 "content": "Students start by selecting and assembling the drone frame, motors, ESCs, and flight controller. We cover frame design considerations, motor sizing calculations, and power system design. The project uses the popular F4 flight controller and BLHeli_S ESCs for reliable performance.",
-                "image": "../assets/projects/drone-building/hardware.jpg",
+                "image": "assets/projects/drone-building/hardware.jpg",
                 "imageDescription": "Drone components laid out during assembly phase"
             },
             {
                 "title": "Flight Control and Programming",
                 "content": "Using Betaflight configurator, students learn to tune PID controllers for stable flight. We then progress to programming autonomous features using Arduino-based flight controllers, implementing functions like altitude hold, GPS waypoint navigation, and return-to-home capabilities.",
-                "image": "../assets/projects/drone-building/software.jpg",
+                "image": "assets/projects/drone-building/software.jpg",
                 "imageDescription": "Flight controller configuration and testing process"
             }
         ],
