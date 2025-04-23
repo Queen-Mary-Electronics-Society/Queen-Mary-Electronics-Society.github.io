@@ -8,17 +8,7 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <img src="../assets/qmul-logo.png" alt="QMES Logo">
-            </div>
-            <div class="nav-links">
-                <a href="index.html#join">Join</a>
-                <a href="index.html#about">About us</a>
-                <a href="projects.html">Projects</a>
-                <a href="index.html#contact">Contact us</a>
-            </div>
-        </nav>
+        <!-- Navbar will be injected here by navbar.js -->
     </header>
 
     <div class="projects-hero">
@@ -86,6 +76,7 @@
 
     <script type="module">
         import { initializeProjectsPage, initializeProjectPage } from './js/projects.js';
+        import { initializeNavbar } from './js/navbar.js';
         
         // Check if we're on a specific project page
         const urlParams = new URLSearchParams(window.location.search);
@@ -150,6 +141,9 @@
                 }
             });
         }
+
+        // Initialize navbar
+        document.addEventListener('DOMContentLoaded', initializeNavbar);
     </script>
 </body>
 </html> 

@@ -11,17 +11,7 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <img src="../assets/qmul-logo.png" alt="QMES Logo">
-            </div>
-            <div class="nav-links">
-                <a href="index.html#join">Join</a>
-                <a href="index.html#about">About us</a>
-                <a href="projects.html">Projects</a>
-                <a href="contact.html">Contact us</a>
-            </div>
-        </nav>
+        <!-- Navbar will be injected here by navbar.js -->
     </header>
 
     <main class="contact-main">
@@ -172,6 +162,12 @@
         } else {
             initializeLinks();
         }
+    </script>
+
+    <!-- Initialize navbar -->
+    <script type="module">
+        import { initializeNavbar } from './js/navbar.js';
+        document.addEventListener('DOMContentLoaded', initializeNavbar);
     </script>
 
     <!-- Bootstrap 5 JS and dependencies -->
