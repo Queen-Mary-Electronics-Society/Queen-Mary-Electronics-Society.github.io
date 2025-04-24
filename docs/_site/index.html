@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QMES - Queen Mary Robotics and Electronics Society</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <!-- Navbar will be injected here by navbar.js -->
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>Who are we?</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>We are Queen Mary Robotics and Electronics Society, a place for people interested in robot building, arduino, coding, electronics and more! From electronics to meet and build something. Interested in building working cpu, line followers, manipulator arms, flying drones, nuclear missiles, okay maybe not these ones, but for everything else, we got you!</p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/team-photo.png" alt="Team working on robotics">
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>Some of our projects</h2>
+            <div class="project-slider">
+                <div class="project-cards featured-projects">
+                    <!-- Projects will be loaded dynamically here -->
+                </div>
+                <div class="slider-track">
+                    <div class="slider-bar">
+                        <div class="slider-handle"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="see-more">
+                <a href="projects.html" class="see-more-btn">See More Projects</a>
+            </div>
+        </section>
+
+        <section id="competitions" class="competitions">
+            <h2>Going to competitions</h2>
+            <div class="competition-content">
+                <div class="unibots-logo">
+                    <img src="assets/unibots-uk.png" alt="Unibots UK Logo">
+                </div>
+                <div class="competition-text">
+                    <h3>Unibots UK</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse leo arcu, rhoncus vitae commodo pell, dapibus in purus. Quisque convallis elit at mi, lacinia sollicitudin est lacinia. Sed ut accumsan, suscipit elit ut, interdum diam. Aliquam quis porttitor odio, et interdum libero. Proin eleifend aliquet vitae, non facilisis dui consectetur vestibulum.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="sponsors">
+            <h2>Proudly sponsored by</h2>
+            <div class="sponsor-grid">
+                <div class="sponsor-item">
+                    <img src="assets/sponsor-logo.png" alt="Sponsor">
+                    <p>Sponsor name</p>
+                </div>
+                <div class="sponsor-item">
+                    <img src="assets/sponsor-logo.png" alt="Sponsor">
+                    <p>Sponsor name</p>
+                </div>
+                <div class="sponsor-item">
+                    <img src="assets/sponsor-logo.png" alt="Sponsor">
+                    <p>Sponsor name</p>
+                </div>
+                <div class="sponsor-item">
+                    <img src="assets/sponsor-logo.png" alt="Sponsor">
+                    <p>Sponsor name</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Sounds interesting?</h2>
+            <div class="cta-grid">
+                <a href="https://www.qmsu.org/groups/qmml/" class="cta-card join" style="background-image: url('assets/robot-arm.jpg')" target="_blank" rel="noopener noreferrer">
+                    <div class="cta-content">
+                        <h3>Join us</h3>
+                    </div>
+                </a>
+                <a href="contact.html" class="cta-card sponsor" style="background-image: url('assets/money.jpg')">
+                    <div class="cta-content">
+                        <h3>Sponsor us</h3>
+                    </div>
+                </a>
+                <a href="contact.html" class="cta-card contact" style="background-image: url('assets/contact.jpg')">
+                    <div class="cta-content">
+                        <h3>Contact us</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Social Media:</h4>
+                <ul>
+                    <li><a href="#" id="linkedin-link"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="#" id="github-link"><i class="fab fa-github"></i> Github</a></li>
+                    <li><a href="#" id="instagram-link"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#" id="discord-link"><i class="fab fa-discord"></i> Discord</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Address:</h4>
+                <p>327 Mile End Rd, Bethnal Green, London E1 4NS</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Details:</h4>
+                <p><a href="#" id="email-link">Email</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Powered by <a href="#">Jekyll</a> and my sleepless nights &nbsp;&nbsp; Hosted by <a href="#">Github</a></p>
+        </div>
+    </footer>
+    <!-- Load config first -->
+    <script src="./config.js"></script>
+    
+    <!-- Initialize links after config is loaded -->
+    <script>
+        // Check if config is loaded
+        console.log('Initial config check:', window.siteConfig);
+
+        function initializeLinks() {
+            console.log('Checking config:', window.siteConfig);
+            
+            if (!window.siteConfig) {
+                console.error('Config not loaded yet, retrying in 100ms');
+                setTimeout(initializeLinks, 100);
+                return;
+            }
+
+            console.log('Config loaded successfully:', {
+                hyperlinks: window.siteConfig.hyperlinks,
+                socialMedia: window.siteConfig.socialMedia
+            });
+
+            // Initialize join link in nav
+            const navJoinLink = document.getElementById('nav-join-link');
+            if (navJoinLink && window.siteConfig.hyperlinks) {
+                navJoinLink.href = window.siteConfig.hyperlinks.QMSU_GROUP;
+                console.log('Set join link href to:', navJoinLink.href);
+            }
+
+            // Initialize social media links
+            const socialLinks = {
+                'linkedin-link': window.siteConfig.socialMedia.linkedin,
+                'github-link': window.siteConfig.socialMedia.github,
+                'instagram-link': window.siteConfig.socialMedia.instagram,
+                'discord-link': window.siteConfig.socialMedia.discord,
+                'email-link': 'mailto:' + window.siteConfig.contact.email
+            };
+
+            // Set each social media link
+            Object.entries(socialLinks).forEach(([id, url]) => {
+                const element = document.getElementById(id);
+                if (element && url) {
+                    element.href = url;
+                    console.log(`Set ${id} href to:`, url);
+                } else {
+                    console.error(`Could not set link for ${id}:`, {
+                        element: element ? element.outerHTML : null,
+                        url: url
+                    });
+                }
+            });
+        }
+
+        // Start initialization when DOM is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeLinks);
+        } else {
+            initializeLinks();
+        }
+    </script>
+
+    <!-- Initialize projects after links -->
+    <script type="module">
+        import { initializeMainPage } from './js/projects.js';
+        import { initializeSlider } from './js/slider.js';
+        
+        // Initialize projects and slider
+        document.addEventListener('DOMContentLoaded', async function() {
+            await initializeMainPage();
+            requestAnimationFrame(() => {
+                initializeSlider();
+            });
+        });
+    </script>
+
+    <!-- Initialize navbar -->
+    <script type="module">
+        import { initializeNavbar } from './js/navbar.js';
+        document.addEventListener('DOMContentLoaded', initializeNavbar);
+    </script>
+</body>
+</html> 

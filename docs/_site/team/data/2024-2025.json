@@ -1,0 +1,89 @@
+{
+    "year": "2024-2025",
+    "groups": {
+        "Our President": [
+            {
+                "name": "Muhie",
+                "role": "President",
+                "photo": "/assets/team/muhie.jpg"
+            }
+        ],
+        "Our Committee": [
+            {
+                "name": "Karl Johannes",
+                "role": "Postgraduate Manager",
+                "photo": "/assets/team/karl-johannes.jpg"
+            },
+            {
+                "name": "Ral",
+                "role": "Treasurer",
+                "photo": "/assets/team/ral.jpg"
+            }
+        ],
+        "Our Members": [
+            { "name": "Aditya" },
+            { "name": "Ahmad" },
+            { "name": "Mariia" },
+            { "name": "Pegah" },
+            { "name": "Keshav" },
+            { "name": "Chinmay" },
+            { "name": "Hishaam Abbasi" },
+            { "name": "Ayman Ahmad" },
+            { "name": "Saeed Ahmed" },
+            { "name": "Muhie Al Haimus" },
+            { "name": "Mubeen Ali" },
+            { "name": "Reef Almansouri" },
+            { "name": "Bartosz Bester" },
+            { "name": "David Buck" },
+            { "name": "Allegra Celesia" },
+            { "name": "Ngai Ching" },
+            { "name": "Erik Croitoru" },
+            { "name": "Rachin Dalal" },
+            { "name": "Daulat Deuja Deuja" },
+            { "name": "Kwaku Dwamena" },
+            { "name": "Rayyan Ghaziani" },
+            { "name": "Tamas Hajdu" },
+            { "name": "Yahya Hashim" },
+            { "name": "Kawshan Islam Dhrubo" },
+            { "name": "Salman Jafferali" },
+            { "name": "Asma Jama" },
+            { "name": "Supraja Jayakumar" },
+            { "name": "Revati Kaluskar" },
+            { "name": "Christina Kim" },
+            { "name": "Denis Kuropatkin" },
+            { "name": "Ida Lenz Gorner" },
+            { "name": "Muhammad Lodhi" },
+            { "name": "Miles MacLeod" },
+            { "name": "Daniil Markovskyi" },
+            { "name": "Wasim Mettry" },
+            { "name": "Ibrahim Musthaq" },
+            { "name": "Navya Narula" },
+            { "name": "Nhu Nguyen" },
+            { "name": "Imen Ouared" },
+            { "name": "Naganagouda Chinmayagouda Patil" },
+            { "name": "Ethan Pena" },
+            { "name": "Andreas Poimenidis" },
+            { "name": "Ilham Qazizada" },
+            { "name": "Farhan Rahman" },
+            { "name": "Nabil Rahman" },
+            { "name": "Silvia Ravishanger" },
+            { "name": "Abner Rodrigues" },
+            { "name": "Bahram Rohim" },
+            { "name": "Hiresh Rughwani" },
+            { "name": "Brandon Rutagamirwa" },
+            { "name": "Toluwalope Seidu" },
+            { "name": "Dheekshitha Sendil" },
+            { "name": "Ahmad Serhal" },
+            { "name": "Ravninder Singh" },
+            { "name": "Bohdan Skulimovskyi" },
+            { "name": "Maiyon Thayananthan" },
+            { "name": "Owen Tse" },
+            { "name": "Yash Vaghela" },
+            { "name": "Sheena Varghese" },
+            { "name": "Rindhiya Vishnu Shankar" },
+            { "name": "Renaldas Zaveckis" },
+            { "name": "Christo Damai" },
+            { "name": "Sayon Vetkaimuththukumar" }
+        ]
+    }
+} 
