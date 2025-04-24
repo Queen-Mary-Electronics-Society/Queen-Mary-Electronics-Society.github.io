@@ -6,17 +6,14 @@
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script type="module">
+    import { initializeNavbar } from '{{ "/js/navbar.js" | relative_url }}';
+    document.addEventListener('DOMContentLoaded', initializeNavbar);
+  </script>
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="{{ '/' | relative_url }}">Home</a></li>
-        <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
-        <li><a href="{{ '/team.html' | relative_url }}">Team</a></li>
-        <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
-      </ul>
-    </nav>
+    <!-- Navbar will be injected here by navbar.js -->
   </header>
   <main class="site-content">
     {{ content }}

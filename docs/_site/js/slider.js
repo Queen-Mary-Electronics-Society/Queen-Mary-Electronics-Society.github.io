@@ -1,103 +1,102 @@
-export function initializeSlider() {
-    const slider = document.querySelector('.project-cards');
-    const handle = document.querySelector('.slider-handle');
-    const sliderBar = document.querySelector('.slider-bar');
+// Function to initialize the slider
+function initializeSlider() {
+    const slider = document.querySelector('.project-slider');
+    if (!slider) return;
+
+    const track = slider.querySelector('.slider-track');
+    const handle = slider.querySelector('.slider-handle');
+    const cards = slider.querySelector('.project-cards');
     
-    if (!slider || !handle || !sliderBar) return;
+    if (!track || !handle || !cards) return;
 
     let isDragging = false;
-    let startX;
-    let startScrollLeft;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID = 0;
 
-    function updateSliderPosition(scrollPercentage) {
-        const boundedPercentage = Math.max(0, Math.min(1, scrollPercentage));
-        const trackWidth = sliderBar.offsetWidth - handle.offsetWidth;
-        const handlePosition = boundedPercentage * trackWidth;
-        handle.style.left = `${handlePosition}px`;
+    // Touch events
+    cards.addEventListener('touchstart', touchStart);
+    cards.addEventListener('touchmove', touchMove);
+    cards.addEventListener('touchend', touchEnd);
+
+    // Mouse events
+    cards.addEventListener('mousedown', touchStart);
+    cards.addEventListener('mousemove', touchMove);
+    cards.addEventListener('mouseup', touchEnd);
+    cards.addEventListener('mouseleave', touchEnd);
+
+    // Prevent context menu on long press
+    cards.addEventListener('contextmenu', e => e.preventDefault());
+
+    function touchStart(e) {
+        isDragging = true;
+        startPos = getPositionX(e);
+        animationID = requestAnimationFrame(animation);
+        cards.classList.add('grabbing');
     }
 
-    function handleSliderMove(clientX) {
+    function touchMove(e) {
         if (!isDragging) return;
-        
-        const rect = sliderBar.getBoundingClientRect();
-        const handleWidth = handle.offsetWidth;
-        const x = clientX - rect.left - (handleWidth / 2);
-        const maxX = rect.width - handleWidth;
-        const boundedX = Math.max(0, Math.min(maxX, x));
-        
-        const scrollPercentage = boundedX / maxX;
-        const maxScroll = slider.scrollWidth - slider.clientWidth;
-        slider.scrollLeft = scrollPercentage * maxScroll;
-        
-        updateSliderPosition(scrollPercentage);
+        const currentPosition = getPositionX(e);
+        currentTranslate = prevTranslate + currentPosition - startPos;
     }
 
-    // Handle dragging
-    handle.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        handle.classList.add('active');
-        startX = e.clientX - handle.offsetLeft;
-        startScrollLeft = slider.scrollLeft;
-        document.body.style.userSelect = 'none';
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        handleSliderMove(e.clientX);
-    });
-
-    document.addEventListener('mouseup', () => {
+    function touchEnd() {
         isDragging = false;
-        handle.classList.remove('active');
-        document.body.style.userSelect = '';
-    });
-
-    // Handle slider bar clicks
-    sliderBar.addEventListener('click', (e) => {
-        if (e.target === handle) return;
+        cancelAnimationFrame(animationID);
+        cards.classList.remove('grabbing');
         
-        const rect = sliderBar.getBoundingClientRect();
-        const handleWidth = handle.offsetWidth;
-        const x = e.clientX - rect.left - (handleWidth / 2);
-        const maxX = rect.width - handleWidth;
-        const boundedX = Math.max(0, Math.min(maxX, x));
+        // Snap to nearest card
+        const cardWidth = cards.querySelector('.project-card').offsetWidth;
+        const gap = 32; // 2rem gap
+        const totalWidth = cardWidth + gap;
         
-        const scrollPercentage = boundedX / maxX;
-        const maxScroll = slider.scrollWidth - slider.clientWidth;
-        slider.scrollLeft = scrollPercentage * maxScroll;
+        const snapPoint = Math.round(currentTranslate / totalWidth) * totalWidth;
+        currentTranslate = snapPoint;
+        prevTranslate = currentTranslate;
         
-        updateSliderPosition(scrollPercentage);
-    });
+        setSliderPosition();
+    }
 
-    // Update handle position on scroll
-    let scrollTimeout;
-    slider.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            const scrollPercentage = slider.scrollLeft / (slider.scrollWidth - slider.clientWidth);
-            updateSliderPosition(scrollPercentage);
-        }, 10);
-    });
+    function animation() {
+        if (isDragging) {
+            setSliderPosition();
+            requestAnimationFrame(animation);
+        }
+    }
 
-    // Handle touch events
-    handle.addEventListener('touchstart', (e) => {
-        isDragging = true;
-        handle.classList.add('active');
-        const touch = e.touches[0];
-        startX = touch.clientX - handle.offsetLeft;
-        startScrollLeft = slider.scrollLeft;
-    });
+    function getPositionX(e) {
+        return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+    }
 
-    document.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        handleSliderMove(e.touches[0].clientX);
-    });
+    function setSliderPosition() {
+        cards.style.transform = `translateX(${currentTranslate}px)`;
+        
+        // Update handle position
+        const maxScroll = cards.scrollWidth - cards.clientWidth;
+        if (maxScroll > 0) {
+            const scrollPercentage = Math.max(0, Math.min(100, (currentTranslate / maxScroll) * 100));
+            handle.style.left = `${scrollPercentage}%`;
+        } else {
+            handle.style.left = '0%';
+        }
+    }
 
-    document.addEventListener('touchend', () => {
-        isDragging = false;
-        handle.classList.remove('active');
+    // Handle click on track
+    track.addEventListener('click', (e) => {
+        const rect = track.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const percentage = x / rect.width;
+        const maxScroll = cards.scrollWidth - cards.clientWidth;
+        currentTranslate = -maxScroll * percentage;
+        prevTranslate = currentTranslate;
+        setSliderPosition();
     });
-
+    
     // Initialize slider position
-    updateSliderPosition(0);
-} 
+    setSliderPosition();
+}
+
+// Export the initialization function
+export { initializeSlider }; 

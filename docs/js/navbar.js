@@ -15,7 +15,7 @@ export function initializeNavbar() {
             <div class="nav-links">
                 <a href="#" id="nav-join-link" target="_blank" rel="noopener noreferrer">Join</a>
                 <a href="/#about">About us</a>
-                <a href="/projects.html">Projects</a>
+                <a href="/projects/">Projects</a>
                 <div class="dropdown">
                     <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false">
                         Our Team

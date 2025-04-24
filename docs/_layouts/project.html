@@ -1,20 +1,64 @@
----
-layout: default
----
-<article class="project-full">
-  <header class="project-title-section">
-    <h1>{{ page.title }}</h1>
-    <div class="project-meta">
-      <span class="date">{{ page.date | date: "%Y-%m-%d" }}</span>
-      {% if page.author %}<span class="author"> by {{ page.author }}</span>{% endif %}
-    </div>
-  </header>
-  <div class="project-content">
-    {{ content }}
-  </div>
-  <footer class="project-footer">
-    <div class="tags">
-      {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
-    </div>
-  </footer>
-</article> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | QMES</title>
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <!-- Navbar will be injected here by navbar.js -->
+    </header>
+
+    <main class="site-content">
+        <article class="project-full">
+            <h1>{{ page.title }}</h1>
+            <div class="project-meta">
+                <span class="date">{{ page.date | date: "%Y-%m-%d" }}</span>
+                {% if page.author %}<span class="author"> by {{ page.author }}</span>{% endif %}
+            </div>
+            <hr>
+            <div class="project-content">
+                {{ content | replace: '](/assets/', '](' | replace: '](assets/', '](' | replace: '](', '](' | append: site.baseurl | replace: '](/', '](' | append: site.baseurl }}
+            </div>
+            <footer class="project-footer">
+                <div class="tags">
+                    {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Social Media</h4>
+                <ul>
+                    <li><a href="{{ site.socialMedia.linkedin }}"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="{{ site.socialMedia.github }}"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="{{ site.socialMedia.instagram }}"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="{{ site.socialMedia.discord }}"><i class="fab fa-discord"></i> Discord</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Powered by Jekyll &nbsp;&nbsp; Hosted by GitHub Pages</p>
+        </div>
+    </footer>
+
+    <!-- Load config first -->
+    <script src="{{ '/config.js' | relative_url }}"></script>
+
+    <!-- Initialize navbar -->
+    <script type="module">
+        import { initializeNavbar } from '{{ "/js/navbar.js" | relative_url }}';
+        document.addEventListener('DOMContentLoaded', initializeNavbar);
+    </script>
+</body>
+</html> 

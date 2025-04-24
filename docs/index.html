@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Home"
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,16 +39,51 @@
             <h2>Some of our projects</h2>
             <div class="project-slider">
                 <div class="project-cards featured-projects">
-                    <!-- Projects will be loaded dynamically here -->
+                    {% assign featured_projects = site.projects | sort: "date" | reverse | limit: 6 %}
+                    {% for project in featured_projects %}
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+                        </div>
+                        <div class="project-content">
+                            <h2 class="project-title">
+                                <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+                            </h2>
+                            <div class="project-meta">
+                                <time datetime="{{ project.date | date_to_xmlschema }}">
+                                    {{ project.date | date: "%B %d, %Y" }}
+                                </time>
+                                {% if project.endDate %}
+                                    <span class="project-status archived">Archived</span>
+                                {% endif %}
+                            </div>
+                            {% if project.summary %}
+                                <p class="project-summary">{{ project.summary }}</p>
+                            {% endif %}
+                            {% if project.tags %}
+                                <div class="project-tags">
+                                    {% for tag in project.tags %}
+                                        <span class="tag">{{ tag }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <a href="{{ project.url | relative_url }}" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    {% endfor %}
                 </div>
-                <div class="slider-track">
-                    <div class="slider-bar">
-                        <div class="slider-handle"></div>
-                    </div>
+                <div class="slider-controls">
+                    <button class="prev-btn" aria-label="Previous projects">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="slider-dots"></div>
+                    <button class="next-btn" aria-label="Next projects">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
             <div class="see-more">
-                <a href="projects.html" class="see-more-btn">See More Projects</a>
+                <a href="/projects/" class="see-more-btn">See More Projects</a>
             </div>
         </section>
 
@@ -133,72 +173,90 @@
     
     <!-- Initialize links after config is loaded -->
     <script>
-        // Check if config is loaded
-        console.log('Initial config check:', window.siteConfig);
+        // Initialize links when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.siteConfig) {
+                initializeLinks();
+            } else {
+                console.error('Config not loaded');
+            }
+        });
 
         function initializeLinks() {
-            console.log('Checking config:', window.siteConfig);
-            
-            if (!window.siteConfig) {
-                console.error('Config not loaded yet, retrying in 100ms');
-                setTimeout(initializeLinks, 100);
-                return;
-            }
-
-            console.log('Config loaded successfully:', {
-                hyperlinks: window.siteConfig.hyperlinks,
-                socialMedia: window.siteConfig.socialMedia
-            });
-
-            // Initialize join link in nav
-            const navJoinLink = document.getElementById('nav-join-link');
-            if (navJoinLink && window.siteConfig.hyperlinks) {
-                navJoinLink.href = window.siteConfig.hyperlinks.QMSU_GROUP;
-                console.log('Set join link href to:', navJoinLink.href);
-            }
-
-            // Initialize social media links
             const socialLinks = {
-                'linkedin-link': window.siteConfig.socialMedia.linkedin,
-                'github-link': window.siteConfig.socialMedia.github,
-                'instagram-link': window.siteConfig.socialMedia.instagram,
-                'discord-link': window.siteConfig.socialMedia.discord,
-                'email-link': 'mailto:' + window.siteConfig.contact.email
+                'linkedin-link': window.siteConfig?.socialMedia?.linkedin,
+                'github-link': window.siteConfig?.socialMedia?.github,
+                'instagram-link': window.siteConfig?.socialMedia?.instagram,
+                'discord-link': window.siteConfig?.socialMedia?.discord,
+                'email-link': `mailto:${window.siteConfig?.contact?.email}`
             };
 
-            // Set each social media link
             Object.entries(socialLinks).forEach(([id, url]) => {
                 const element = document.getElementById(id);
                 if (element && url) {
                     element.href = url;
-                    console.log(`Set ${id} href to:`, url);
-                } else {
-                    console.error(`Could not set link for ${id}:`, {
-                        element: element ? element.outerHTML : null,
-                        url: url
-                    });
                 }
             });
         }
-
-        // Start initialization when DOM is loaded
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initializeLinks);
-        } else {
-            initializeLinks();
-        }
     </script>
 
-    <!-- Initialize projects after links -->
+    <!-- Initialize slider -->
     <script type="module">
-        import { initializeMainPage } from './js/projects.js';
-        import { initializeSlider } from './js/slider.js';
-        
-        // Initialize projects and slider
-        document.addEventListener('DOMContentLoaded', async function() {
-            await initializeMainPage();
-            requestAnimationFrame(() => {
-                initializeSlider();
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.querySelector('.project-slider');
+            const cards = slider.querySelector('.project-cards');
+            const prevBtn = slider.querySelector('.prev-btn');
+            const nextBtn = slider.querySelector('.next-btn');
+            const dotsContainer = slider.querySelector('.slider-dots');
+            
+            let currentIndex = 0;
+            const cardsPerView = window.innerWidth > 1200 ? 3 : window.innerWidth > 768 ? 2 : 1;
+            const totalSlides = Math.ceil(cards.children.length / cardsPerView);
+            
+            // Create dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('dot');
+                dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                if (i === 0) dot.classList.add('active');
+                dotsContainer.appendChild(dot);
+                
+                dot.addEventListener('click', () => {
+                    goToSlide(i);
+                });
+            }
+            
+            function updateSlider() {
+                const offset = -currentIndex * (100 / cardsPerView);
+                cards.style.transform = `translateX(${offset}%)`;
+                
+                // Update dots
+                document.querySelectorAll('.dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+                
+                // Update buttons
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex === totalSlides - 1;
+            }
+            
+            function goToSlide(index) {
+                currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
+                updateSlider();
+            }
+            
+            prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+            nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+            
+            // Initial setup
+            updateSlider();
+            
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                const newCardsPerView = window.innerWidth > 1200 ? 3 : window.innerWidth > 768 ? 2 : 1;
+                if (newCardsPerView !== cardsPerView) {
+                    location.reload();
+                }
             });
         });
     </script>
