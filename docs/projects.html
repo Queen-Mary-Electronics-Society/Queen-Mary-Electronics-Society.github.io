@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - QMES</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
@@ -55,14 +56,15 @@
             <div class="footer-section">
                 <h4>Social Media:</h4>
                 <ul>
-                    <li><a href="#" id="linkedin-link">LinkedIn</a></li>
-                    <li><a href="#" id="github-link">Github</a></li>
-                    <li><a href="#" id="instagram-link">Instagram</a></li>
+                    <li><a href="#" id="linkedin-link"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="#" id="github-link"><i class="fab fa-github"></i> Github</a></li>
+                    <li><a href="#" id="instagram-link"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#" id="discord-link"><i class="fab fa-discord"></i> Discord</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Address:</h4>
-                <p>QMUL</p>
+                <p>327 Mile End Rd, Bethnal Green, London E1 4NS</p>
             </div>
             <div class="footer-section">
                 <h4>Contact Details:</h4>
@@ -73,6 +75,38 @@
             <p>Powered by <a href="#">Jekyll</a> and my sleepless nights &nbsp;&nbsp; Hosted by <a href="#">Github</a></p>
         </div>
     </footer>
+
+    <!-- Load config first for footer links -->
+    <script src="./config.js"></script>
+    <!-- Initialize footer social media links -->
+    <script>
+        console.log('Initial config check:', window.siteConfig);
+        function initializeLinks() {
+            console.log('Checking config:', window.siteConfig);
+            if (!window.siteConfig) {
+                console.error('Config not loaded yet, retrying in 100ms');
+                setTimeout(initializeLinks, 100);
+                return;
+            }
+            // Initialize social media links
+            const socialLinks = {
+                'linkedin-link': window.siteConfig.socialMedia.linkedin,
+                'github-link': window.siteConfig.socialMedia.github,
+                'instagram-link': window.siteConfig.socialMedia.instagram,
+                'discord-link': window.siteConfig.socialMedia.discord,
+                'email-link': 'mailto:' + window.siteConfig.contact.email
+            };
+            Object.entries(socialLinks).forEach(([id, url]) => {
+                const el = document.getElementById(id);
+                if (el && url) el.href = url;
+            });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeLinks);
+        } else {
+            initializeLinks();
+        }
+    </script>
 
     <script type="module">
         import { initializeProjectsPage, initializeProjectPage } from './js/projects.js';
