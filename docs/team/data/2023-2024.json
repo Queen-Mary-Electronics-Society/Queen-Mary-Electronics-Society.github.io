@@ -1,0 +1,26 @@
+{
+    "year": "2023-2024",
+    "roles": {
+        "President": [
+            {
+                "name": "Grace",
+                "role": "President",
+                "photo": "/assets/team/grace.jpg"
+            }
+        ],
+        "Treasurer": [
+            {
+                "name": "Henry",
+                "role": "Treasurer",
+                "photo": "/assets/team/henry.jpg"
+            }
+        ],
+        "Postgraduate Manager": [
+            {
+                "name": "Ivy",
+                "role": "Postgraduate Manager",
+                "photo": "/assets/team/ivy.jpg"
+            }
+        ]
+    }
+} 

@@ -6,7 +6,8 @@ export const teamData = {
     // Function to get all available team years
     getAvailableYears: async () => {
         try {
-            const response = await fetch('/team/years.json');
+            const baseUrl = window.siteConfig?.baseUrl || '';
+            const response = await fetch(`${baseUrl}/team/years.json`);
             if (!response.ok) throw new Error('Failed to fetch team years');
             return await response.json();
         } catch (error) {
@@ -18,7 +19,8 @@ export const teamData = {
     // Function to load team data for a specific year
     loadTeamData: async (year) => {
         try {
-            const response = await fetch(`/team/data/${year}.json`);
+            const baseUrl = window.siteConfig?.baseUrl || '';
+            const response = await fetch(`${baseUrl}/team/data/${year}.json`);
             if (!response.ok) throw new Error(`Failed to fetch team data for ${year}`);
             return await response.json();
         } catch (error) {

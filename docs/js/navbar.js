@@ -1,3 +1,5 @@
+import { teamData } from './team.js';
+
 export function initializeNavbar() {
     // Get the base URL from the config
     const baseUrl = window.siteConfig?.baseUrl || '';
@@ -14,18 +16,18 @@ export function initializeNavbar() {
                 <a href="${baseUrl}/#about">About us</a>
                 <a href="${baseUrl}/projects.html">Projects</a>
                 <div class="dropdown">
-                    <button class="dropdown-btn" aria-expanded="false">
+                    <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false">
                         Our Team
                         <i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="dropdown-content">
-                        <a href="${baseUrl}/team.html">Current Team</a>
+                    <div class="dropdown-content" role="menu">
+                        <a href="${baseUrl}/team.html" role="menuitem">Current Team</a>
                         <div class="submenu">
-                            <button class="submenu-btn" aria-expanded="false">
+                            <button class="submenu-btn" aria-haspopup="true" aria-expanded="false">
                                 Previous Teams
                                 <i class="fas fa-chevron-right"></i>
                             </button>
-                            <div class="submenu-content">
+                            <div class="submenu-content" role="menu">
                                 <!-- Previous teams will be loaded dynamically -->
                             </div>
                         </div>
@@ -44,7 +46,7 @@ export function initializeNavbar() {
         // Initialize dropdown functionality
         initializeDropdowns();
         
-        // Load previous teams
+        // Load previous teams dynamically
         loadPreviousTeams();
     }
 }
@@ -57,7 +59,7 @@ function initializeDropdowns() {
     if (dropdownBtn && dropdownContent) {
         dropdownBtn.addEventListener('click', () => {
             const isExpanded = dropdownBtn.getAttribute('aria-expanded') === 'true';
-            dropdownBtn.setAttribute('aria-expanded', !isExpanded);
+            dropdownBtn.setAttribute('aria-expanded', String(!isExpanded));
             dropdownContent.classList.toggle('show');
         });
         
@@ -69,7 +71,7 @@ function initializeDropdowns() {
             submenuBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const isExpanded = submenuBtn.getAttribute('aria-expanded') === 'true';
-                submenuBtn.setAttribute('aria-expanded', !isExpanded);
+                submenuBtn.setAttribute('aria-expanded', String(!isExpanded));
                 submenuContent.classList.toggle('show');
             });
         }
@@ -79,11 +81,11 @@ function initializeDropdowns() {
             if (!e.target.closest('.dropdown')) {
                 dropdownBtn.setAttribute('aria-expanded', 'false');
                 dropdownContent.classList.remove('show');
-                const submenuBtn = document.querySelector('.submenu-btn');
-                const submenuContent = document.querySelector('.submenu-content');
-                if (submenuBtn && submenuContent) {
-                    submenuBtn.setAttribute('aria-expanded', 'false');
-                    submenuContent.classList.remove('show');
+                const submenuBtn2 = document.querySelector('.submenu-btn');
+                const submenuContent2 = document.querySelector('.submenu-content');
+                if (submenuBtn2 && submenuContent2) {
+                    submenuBtn2.setAttribute('aria-expanded', 'false');
+                    submenuContent2.classList.remove('show');
                 }
             }
         });
@@ -92,15 +94,16 @@ function initializeDropdowns() {
 
 async function loadPreviousTeams() {
     try {
-        const response = await fetch('/team/years.json');
+        const baseUrl = window.siteConfig?.baseUrl || '';
+        const response = await fetch(`${baseUrl}/team/years.json`);
         if (!response.ok) throw new Error('Failed to fetch team years');
         const years = await response.json();
         
         const submenuContent = document.querySelector('.submenu-content');
         if (submenuContent) {
             submenuContent.innerHTML = years
-                .filter(year => year !== '2024-2025') // Exclude current year
-                .map(year => `<a href="/team.html?year=${year}">${year.replace('-', '/')}</a>`)
+                .filter(year => year !== teamData.currentYear)
+                .map(year => `<a href="${baseUrl}/team.html?year=${year}" role="menuitem">${year.replace('-', '/')}</a>`)
                 .join('');
         }
     } catch (error) {

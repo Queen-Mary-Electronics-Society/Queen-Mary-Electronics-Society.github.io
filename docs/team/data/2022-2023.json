@@ -1,0 +1,26 @@
+{
+    "year": "2022-2023",
+    "roles": {
+        "President": [
+            {
+                "name": "Alice",
+                "role": "President",
+                "photo": "/assets/team/alice.jpg"
+            }
+        ],
+        "Treasurer": [
+            {
+                "name": "Bob",
+                "role": "Treasurer",
+                "photo": "/assets/team/bob.jpg"
+            }
+        ],
+        "Postgraduate Manager": [
+            {
+                "name": "Carol",
+                "role": "Postgraduate Manager",
+                "photo": "/assets/team/carol.jpg"
+            }
+        ]
+    }
+} 

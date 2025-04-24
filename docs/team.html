@@ -45,9 +45,9 @@
             document.getElementById('team-title').textContent = `Our ${year.replace('-', '/')} Committee`;
             
             // Load and render team data
-            const teamData = await teamData.loadTeamData(year);
-            if (teamData) {
-                document.getElementById('team-content').innerHTML = teamData.renderTeamHierarchy(teamData);
+            const data = await teamData.loadTeamData(year);
+            if (data) {
+                document.getElementById('team-content').innerHTML = teamData.renderTeamHierarchy(data);
             } else {
                 document.getElementById('team-content').innerHTML = '<p>Team data not available for this year.</p>';
             }

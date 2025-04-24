@@ -4,6 +4,9 @@
     --secondary-color: #333;
     --background-color: #fff;
     --text-color: #333;
+    --card-bg: #fff;
+    --accent-color: var(--primary-color);
+    --hover-bg: #f5f5f5;
 }
 
 * {
@@ -1149,6 +1152,14 @@ footer {
 }
 
 /* Dropdown Menu Styles */
+.nav-links .dropdown {
+    margin-left: 2rem;
+}
+
+.submenu {
+    position: relative;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -1180,10 +1191,13 @@ footer {
     z-index: 1000;
 }
 
-.dropdown-content.show {
+/* Make both dropdown and submenu visible when .show is toggled */
+.dropdown-content.show,
+.submenu-content.show {
     display: block;
 }
 
+/* Ensure submenu is positioned to the right of its parent */
 .submenu-content {
     left: 100%;
     top: 0;
