@@ -1,0 +1,17 @@
+title: "QMES Website"
+baseurl: ""
+url: "https://Queen-Mary-Electronics-Society.github.io"
+
+collections:
+  projects:
+    output: true
+    permalink: "/projects/:path/"
+
+socialMedia:
+  linkedin: "https://www.linkedin.com/company/queen-mary-electronics-society/"
+  github: "https://github.com/Queen-Mary-Electronics-Society"
+  instagram: "https://www.instagram.com/qmelectronics_soc/"
+  discord: "https://discord.gg/hfxbNHffHn"
+
+contact:
+  email: "qmelectronicssociety@qmsu.org" 
