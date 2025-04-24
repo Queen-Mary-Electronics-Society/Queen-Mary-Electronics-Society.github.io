@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+# Use the github-pages gem for GitHub Pages compatibility
+gem "github-pages", group: :jekyll_plugins
+gem "webrick", "~> 1.8"
+
+group :jekyll_plugins do
+  gem "jekyll-relative-links"
+  gem "jekyll-seo-tag"
+end 

@@ -1,0 +1,55 @@
+---
+layout: default
+title: "Our Projects"
+permalink: /projects.html
+---
+
+<div class="projects-hero">
+  <img src="{{ '/assets/bg-projects.jpg' | relative_url }}" alt="Projects Background">
+</div>
+
+<main class="projects-page">
+  <section class="projects-section">
+    <div class="project-title-section">
+      <h1>Our Projects</h1>
+      <p class="section-description">Explore our exciting electronics and engineering projects, from workshops to hands-on builds.</p>
+    </div>
+
+    <div class="projects-grid">
+      {% assign projects = site.projects | sort: 'date' | reverse %}
+      {% for project in projects %}
+        <article class="project-card{% if project.featured %} featured{% endif %}">
+          <div class="project-image">
+            {% if project.thumbnail %}
+              <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+            {% endif %}
+          </div>
+          <div class="project-content">
+            <h2 class="project-title">
+              <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+            </h2>
+            <div class="project-meta">
+              <time datetime="{{ project.date | date_to_xmlschema }}">
+                {{ project.date | date: "%B %d, %Y" }}
+              </time>
+              {% if project.endDate %}
+                <span class="project-status archived">Archived</span>
+              {% endif %}
+            </div>
+            {% if project.summary %}
+              <p class="project-summary">{{ project.summary }}</p>
+            {% endif %}
+            {% if project.tags %}
+              <div class="project-tags">
+                {% for tag in project.tags %}
+                  <span class="tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <a href="{{ project.url | relative_url }}" class="project-link">Learn More</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</main> 

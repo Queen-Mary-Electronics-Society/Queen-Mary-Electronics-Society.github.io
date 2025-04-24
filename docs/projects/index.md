@@ -15,18 +15,29 @@ permalink: /projects/
     </div>
 
     <div class="projects-list">
-      {% for project in site.projects %}
-        <div class="project-card">
+      {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+      {% for project in sorted_projects %}
+        <div class="project-card {% if project.featured %}featured{% endif %}">
           <div class="project-info">
             <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
             <p class="project-date">
-              {{ project.date | date: "%Y-%m-%d" }}{% unless project.endDate %}{% else %} - <span class="archived">archived</span>{% endunless %}
+              {{ project.date | date: "%B %d, %Y" }}
+              {% if project.endDate %}
+                <span class="archived">(Archived)</span>
+              {% endif %}
             </p>
             <p>{{ project.summary }}</p>
+            <div class="project-tags">
+              {% for tag in project.tags %}
+                <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
             <a href="{{ project.url | relative_url }}" class="learn-more">Learn More</a>
           </div>
           <div class="project-image">
-            <a href="{{ project.url | relative_url }}"><img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}"></a>
+            <a href="{{ project.url | relative_url }}">
+              <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+            </a>
           </div>
         </div>
       {% endfor %}

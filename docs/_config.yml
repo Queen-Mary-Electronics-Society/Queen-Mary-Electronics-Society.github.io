@@ -1,11 +1,48 @@
 title: "QMES Website"
+description: "Queen Mary Electronics Society Website"
 baseurl: ""
 url: "https://Queen-Mary-Electronics-Society.github.io"
 
+# GitHub Pages settings
+repository: "Queen-Mary-Electronics-Society/website"
+remote_theme: pages-themes/minimal@v0.2.0
+
+# Build settings
+markdown: GFM
+highlighter: rouge
+lsi: false
+safe: true
+
+# Plugins
+plugins:
+  - jekyll-relative-links
+  - jekyll-seo-tag
+  - jekyll-remote-theme
+
+# Collections
 collections:
   projects:
     output: true
-    permalink: "/projects/:path/"
+    permalink: /projects/:path/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .github
+  - setup.ps1
+  - README.md
 
 socialMedia:
   linkedin: "https://www.linkedin.com/company/queen-mary-electronics-society/"
