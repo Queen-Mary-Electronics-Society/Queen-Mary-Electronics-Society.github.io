@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - QMES</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <!-- Navbar will be injected here by navbar.js -->
+    </header>
+
+    <main>
+        <section class="team-section">
+            <h1 id="team-title">Our Team</h1>
+            <div id="team-content">
+                <!-- Team content will be loaded dynamically here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer will be injected here -->
+    </footer>
+
+    <!-- Load config first -->
+    <script src="./config.js"></script>
+    
+    <!-- Initialize navbar -->
+    <script type="module">
+        import { initializeNavbar } from './js/navbar.js';
+        import { teamData } from './js/team.js';
+        
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Initialize navbar
+            initializeNavbar();
+            
+            // Get the year from URL or use current year
+            const urlParams = new URLSearchParams(window.location.search);
+            const year = urlParams.get('year') || teamData.currentYear;
+            
+            // Update page title
+            document.getElementById('team-title').textContent = `Our ${year.replace('-', '/')} Committee`;
+            
+            // Load and render team data
+            const teamData = await teamData.loadTeamData(year);
+            if (teamData) {
+                document.getElementById('team-content').innerHTML = teamData.renderTeamHierarchy(teamData);
+            } else {
+                document.getElementById('team-content').innerHTML = '<p>Team data not available for this year.</p>';
+            }
+        });
+    </script>
+</body>
+</html> 

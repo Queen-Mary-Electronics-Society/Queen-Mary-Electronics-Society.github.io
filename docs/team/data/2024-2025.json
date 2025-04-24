@@ -1,0 +1,26 @@
+{
+    "year": "2024-2025",
+    "roles": {
+        "President": [
+            {
+                "name": "Muhie",
+                "role": "President",
+                "photo": "/assets/team/muhie.jpg"
+            }
+        ],
+        "Treasurer": [
+            {
+                "name": "Ral",
+                "role": "Treasurer",
+                "photo": "/assets/team/ral.jpg"
+            }
+        ],
+        "Postgraduate Manager": [
+            {
+                "name": "Karl",
+                "role": "Postgraduate Manager",
+                "photo": "/assets/team/karl.jpg"
+            }
+        ]
+    }
+} 
