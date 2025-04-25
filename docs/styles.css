@@ -1313,6 +1313,16 @@ footer {
     transition: transform 0.3s ease;
 }
 
+.team-member-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.team-member-link:hover .team-member {
+    transform: translateY(-5px);
+}
+
 .team-member:hover {
     transform: translateY(-5px);
 }
@@ -1340,6 +1350,17 @@ footer {
 .member-info p {
     color: var(--text-color);
     font-size: 1.1rem;
+}
+
+.member-info p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.member-info p a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 /* Dropdown Menu Styles */

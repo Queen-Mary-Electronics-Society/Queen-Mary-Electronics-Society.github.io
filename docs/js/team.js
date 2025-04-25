@@ -40,20 +40,29 @@ export const teamData = {
             const pngSrc = `${assetBase}/${filename}.png`;
             const jpgSrc = `${assetBase}/${filename}.jpg`;
             const defaultSrc = `${assetBase}/default.png`;
-            return `
-                <div class="team-member">
-                    <div class="member-profile">
-                        <img src="${pngSrc}"
-                             alt="${member.name}"
-                             title="${member.role || ''}"
-                             onerror="if(this.src.endsWith('.png')){this.src='${jpgSrc}';}else{this.onerror=null;this.src='${defaultSrc}';}">
-                    </div>
-                    <div class="member-info">
-                        ${member.role ? `<h3>${member.role}</h3>` : ''}
-                        <p>${member.name}</p>
-                    </div>
+            
+            const memberContent = `
+                <div class="member-profile">
+                    <img src="${pngSrc}"
+                         alt="${member.name}"
+                         title="${member.role || ''}"
+                         onerror="if(this.src.endsWith('.png')){this.src='${jpgSrc}';}else{this.onerror=null;this.src='${defaultSrc}';}">
+                </div>
+                <div class="member-info">
+                    ${member.role ? `<h3>${member.role}</h3>` : ''}
+                    <p>${member.name}</p>
                 </div>
             `;
+            
+            return member.link 
+                ? `<a href="${member.link}" target="_blank" rel="noopener noreferrer" class="team-member-link">
+                    <div class="team-member">
+                        ${memberContent}
+                    </div>
+                   </a>`
+                : `<div class="team-member">
+                    ${memberContent}
+                   </div>`;
         };
         
         const renderGroup = (groupName, members) => {
