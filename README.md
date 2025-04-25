@@ -29,6 +29,7 @@ any changes to the `prod` base. This can be done with these commands:
 ```bash
 git rebase main prod
 git push origin prod
+git switch main
 ```
 
 #### Developed by [Karl Johannes](https://www.linkedin.com/in/karljohannes)
