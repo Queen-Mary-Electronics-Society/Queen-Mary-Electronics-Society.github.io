@@ -3,244 +3,136 @@ layout: default
 title: "Home"
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QMES - Queen Mary Robotics and Electronics Society</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-    <header>
-        <!-- Navbar will be injected here by navbar.js -->
-    </header>
+<section class="hero">
+    <div class="hero-label">
+        <div class="hero-content-container">
+            <h1 class="hero-title">
+                Building Robots!
+            </h1>
+            <p class="hero-subtitle">
+                And other exciting stuff
+            </p>
+        </div>
+        <div class="hero-decore-bar"></div>
+    </div>
+</section>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-            </div>
-        </section>
+<section id="about" class="about">
+    <h2>Who are we?</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p>We are Queen Mary Robotics and Electronics Society, a place for people interested in robot building, arduino, coding, electronics and more! From electronics to meet and build something. Interested in building working cpu, line followers, manipulator arms, flying drones, nuclear missiles, okay maybe not these ones, but for everything else, we got you!</p>
+        </div>
+        <div class="about-image">
+            <img src="assets/team-photo.png" alt="Team working on robotics">
+        </div>
+    </div>
+</section>
 
-        <section id="about" class="about">
-            <h2>Who are we?</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>We are Queen Mary Robotics and Electronics Society, a place for people interested in robot building, arduino, coding, electronics and more! From electronics to meet and build something. Interested in building working cpu, line followers, manipulator arms, flying drones, nuclear missiles, okay maybe not these ones, but for everything else, we got you!</p>
+<section id="projects" class="projects">
+    <h2>Some of our projects</h2>
+    <div class="project-slider">
+        <div class="project-cards featured-projects">
+            {% assign featured_projects = site.projects | sort: "date" | reverse | limit: 6 %}
+            {% for project in featured_projects %}
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
                 </div>
-                <div class="about-image">
-                    <img src="assets/team-photo.png" alt="Team working on robotics">
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects">
-            <h2>Some of our projects</h2>
-            <div class="project-slider">
-                <div class="project-cards featured-projects">
-                    {% assign featured_projects = site.projects | sort: "date" | reverse | limit: 6 %}
-                    {% for project in featured_projects %}
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+                <div class="project-content">
+                    <h2 class="project-title">
+                        <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+                    </h2>
+                    <div class="project-meta">
+                        <time datetime="{{ project.date | date_to_xmlschema }}">
+                            {{ project.date | date: "%B %d, %Y" }}
+                        </time>
+                        {% if project.endDate %}
+                            <span class="project-status archived">Archived</span>
+                        {% endif %}
+                    </div>
+                    {% if project.summary %}
+                        <p class="project-summary">{{ project.summary }}</p>
+                    {% endif %}
+                    {% if project.tags %}
+                        <div class="project-tags">
+                            {% for tag in project.tags %}
+                                <span class="tag">{{ tag }}</span>
+                            {% endfor %}
                         </div>
-                        <div class="project-content">
-                            <h2 class="project-title">
-                                <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
-                            </h2>
-                            <div class="project-meta">
-                                <time datetime="{{ project.date | date_to_xmlschema }}">
-                                    {{ project.date | date: "%B %d, %Y" }}
-                                </time>
-                                {% if project.endDate %}
-                                    <span class="project-status archived">Archived</span>
-                                {% endif %}
-                            </div>
-                            {% if project.summary %}
-                                <p class="project-summary">{{ project.summary }}</p>
-                            {% endif %}
-                            {% if project.tags %}
-                                <div class="project-tags">
-                                    {% for tag in project.tags %}
-                                        <span class="tag">{{ tag }}</span>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                            <a href="{{ project.url | relative_url }}" class="read-more">Read More</a>
-                        </div>
-                    </article>
-                    {% endfor %}
+                    {% endif %}
+                    <a href="{{ project.url | relative_url }}" class="read-more">Read More</a>
                 </div>
-                <div class="slider-controls">
-                    <button class="prev-btn" aria-label="Previous projects">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="slider-dots"></div>
-                    <button class="next-btn" aria-label="Next projects">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
+            </article>
+            {% endfor %}
+        </div>
+        <div class="slider-controls">
+            <button class="prev-btn" aria-label="Previous projects">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="slider-dots"></div>
+            <button class="next-btn" aria-label="Next projects">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+    <div class="see-more">
+        <a href="/projects/" class="see-more-btn">See More Projects</a>
+    </div>
+</section>
+
+<section id="competitions" class="competitions">
+    <h2>Going to competitions</h2>
+    <div class="competition-content">
+        <div class="unibots-logo">
+            <img src="assets/unibots-uk.png" alt="Unibots UK Logo">
+        </div>
+        <div class="competition-text">
+            <h3>Unibots UK</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse leo arcu, rhoncus vitae commodo pell, dapibus in purus. Quisque convallis elit at mi, lacinia sollicitudin est lacinia. Sed ut accumsan, suscipit elit ut, interdum diam. Aliquam quis porttitor odio, et interdum libero. Proin eleifend aliquet vitae, non facilisis dui consectetur vestibulum.</p>
+        </div>
+    </div>
+</section>
+
+<section class="sponsors">
+    <h2>Proudly sponsored by</h2>
+    <div class="sponsor-grid">
+        <div class="sponsor-item">
+            <img src="assets/sponsor-logo.png" alt="Sponsor">
+            <p>Sponsor name</p>
+        </div>
+        <div class="sponsor-item">
+            <img src="assets/sponsor-logo.png" alt="Sponsor">
+            <p>Sponsor name</p>
+        </div>
+        <div class="sponsor-item">
+            <img src="assets/sponsor-logo.png" alt="Sponsor">
+            <p>Sponsor name</p>
+        </div>
+        <div class="sponsor-item">
+            <img src="assets/sponsor-logo.png" alt="Sponsor">
+            <p>Sponsor name</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Sounds interesting?</h2>
+    <div class="cta-grid">
+        <a href="https://www.qmsu.org/groups/qmml/" class="cta-card join" style="background-image: url('assets/robot-arm.jpg')" target="_blank" rel="noopener noreferrer">
+            <div class="cta-content">
+                <h3>Join us</h3>
             </div>
-            <div class="see-more">
-                <a href="/projects/" class="see-more-btn">See More Projects</a>
+        </a>
+        <a href="contact.html" class="cta-card sponsor" style="background-image: url('assets/money.jpg')">
+            <div class="cta-content">
+                <h3>Sponsor us</h3>
             </div>
-        </section>
-
-        <section id="competitions" class="competitions">
-            <h2>Going to competitions</h2>
-            <div class="competition-content">
-                <div class="unibots-logo">
-                    <img src="assets/unibots-uk.png" alt="Unibots UK Logo">
-                </div>
-                <div class="competition-text">
-                    <h3>Unibots UK</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse leo arcu, rhoncus vitae commodo pell, dapibus in purus. Quisque convallis elit at mi, lacinia sollicitudin est lacinia. Sed ut accumsan, suscipit elit ut, interdum diam. Aliquam quis porttitor odio, et interdum libero. Proin eleifend aliquet vitae, non facilisis dui consectetur vestibulum.</p>
-                </div>
+        </a>
+        <a href="contact.html" class="cta-card contact" style="background-image: url('assets/contact.jpg')">
+            <div class="cta-content">
+                <h3>Contact us</h3>
             </div>
-        </section>
-
-        <section class="sponsors">
-            <h2>Proudly sponsored by</h2>
-            <div class="sponsor-grid">
-                <div class="sponsor-item">
-                    <img src="assets/sponsor-logo.png" alt="Sponsor">
-                    <p>Sponsor name</p>
-                </div>
-                <div class="sponsor-item">
-                    <img src="assets/sponsor-logo.png" alt="Sponsor">
-                    <p>Sponsor name</p>
-                </div>
-                <div class="sponsor-item">
-                    <img src="assets/sponsor-logo.png" alt="Sponsor">
-                    <p>Sponsor name</p>
-                </div>
-                <div class="sponsor-item">
-                    <img src="assets/sponsor-logo.png" alt="Sponsor">
-                    <p>Sponsor name</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <h2>Sounds interesting?</h2>
-            <div class="cta-grid">
-                <a href="https://www.qmsu.org/groups/qmml/" class="cta-card join" style="background-image: url('assets/robot-arm.jpg')" target="_blank" rel="noopener noreferrer">
-                    <div class="cta-content">
-                        <h3>Join us</h3>
-                    </div>
-                </a>
-                <a href="contact.html" class="cta-card sponsor" style="background-image: url('assets/money.jpg')">
-                    <div class="cta-content">
-                        <h3>Sponsor us</h3>
-                    </div>
-                </a>
-                <a href="contact.html" class="cta-card contact" style="background-image: url('assets/contact.jpg')">
-                    <div class="cta-content">
-                        <h3>Contact us</h3>
-                    </div>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Load config first -->
-    <script src="./config.js"></script>
-    
-    <!-- Initialize links after config is loaded -->
-    <script>
-        // Initialize links when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            if (window.siteConfig) {
-                initializeLinks();
-            } else {
-                console.error('Config not loaded');
-            }
-        });
-
-        function initializeLinks() {
-            const socialLinks = {
-                'linkedin-link': window.siteConfig?.socialMedia?.linkedin,
-                'github-link': window.siteConfig?.socialMedia?.github,
-                'instagram-link': window.siteConfig?.socialMedia?.instagram,
-                'discord-link': window.siteConfig?.socialMedia?.discord,
-                'email-link': `mailto:${window.siteConfig?.contact?.email}`
-            };
-
-            Object.entries(socialLinks).forEach(([id, url]) => {
-                const element = document.getElementById(id);
-                if (element && url) {
-                    element.href = url;
-                }
-            });
-        }
-    </script>
-
-    <!-- Initialize slider -->
-    <script type="module">
-        document.addEventListener('DOMContentLoaded', () => {
-            const slider = document.querySelector('.project-slider');
-            const cards = slider.querySelector('.project-cards');
-            const prevBtn = slider.querySelector('.prev-btn');
-            const nextBtn = slider.querySelector('.next-btn');
-            const dotsContainer = slider.querySelector('.slider-dots');
-            
-            let currentIndex = 0;
-            const cardsPerView = window.innerWidth > 1200 ? 3 : window.innerWidth > 768 ? 2 : 1;
-            const totalSlides = Math.ceil(cards.children.length / cardsPerView);
-            
-            // Create dots
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('button');
-                dot.classList.add('dot');
-                dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-                if (i === 0) dot.classList.add('active');
-                dotsContainer.appendChild(dot);
-                
-                dot.addEventListener('click', () => {
-                    goToSlide(i);
-                });
-            }
-            
-            function updateSlider() {
-                const offset = -currentIndex * (100 / cardsPerView);
-                cards.style.transform = `translateX(${offset}%)`;
-                
-                // Update dots
-                document.querySelectorAll('.dot').forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentIndex);
-                });
-                
-                // Update buttons
-                prevBtn.disabled = currentIndex === 0;
-                nextBtn.disabled = currentIndex === totalSlides - 1;
-            }
-            
-            function goToSlide(index) {
-                currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
-                updateSlider();
-            }
-            
-            prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-            nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-            
-            // Initial setup
-            updateSlider();
-            
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                const newCardsPerView = window.innerWidth > 1200 ? 3 : window.innerWidth > 768 ? 2 : 1;
-                if (newCardsPerView !== cardsPerView) {
-                    location.reload();
-                }
-            });
-        });
-    </script>
-
-    <!-- Initialize navbar -->
-    <script type="module">
-        import { initializeNavbar } from './js/navbar.js';
-        document.addEventListener('DOMContentLoaded', initializeNavbar);
-    </script>
-</body>
-</html> 
+        </a>
+    </div>
+</section>
