@@ -75,20 +75,6 @@ nav ul {
     color: var(--primary-color);
 }
 
-/* Navbar Discord icon styling */
-.nav-links a#nav-discord-link {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-    margin-left: 0;
-}
-
-.nav-links a#nav-discord-link i {
-    font-size: 24px;
-}
-
 /* Hero Section */
 .hero {
     height: 453px;

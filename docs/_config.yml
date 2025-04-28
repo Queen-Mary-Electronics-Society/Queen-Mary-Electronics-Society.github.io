@@ -37,13 +37,12 @@ defaults:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - node_modules
   - vendor
   - .git
   - .github
-  - setup.ps1
   - README.md
 
+# Additional data
 socialMedia:
   linkedin: "https://www.linkedin.com/company/queen-mary-electronics-society/"
   github: "https://github.com/Queen-Mary-Electronics-Society"
