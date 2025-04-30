@@ -1,8 +1,8 @@
 ---
 layout: project
 title: "6-Axis Robotic Arm"
-date: 2024-02-01
-endDate: null
+start_date: 2024-02-01
+end_date: null
 author: "Michael Rodriguez"
 summary: "Design and construction of a 6-axis robotic arm using 3D printing, servo motors, and inverse kinematics."
 featured: true

@@ -1,10 +1,12 @@
 ---
 layout: project
 title: "Arduino Workshop Series"
-date: 2024-01-15
-endDate: null
+start_date: 2024-01-15
+end_date: null
 author: "Sarah Chen"
-summary: "A comprehensive workshop series teaching Arduino basics, from blinking LEDs to complex IoT projects."
+summary: >
+  A comprehensive workshop series teaching Arduino 
+  basics, from blinking LEDs to complex IoT projects.
 featured: true
 thumbnail: "/assets/projects/arduino-workshop/thumbnail.jpg"
 tags:

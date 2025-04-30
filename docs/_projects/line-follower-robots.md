@@ -1,8 +1,8 @@
 ---
 layout: project
 title: "Building Line Follower Robots"
-date: 2023-12-23
-endDate: null
+start_date: 2023-12-23
+end_date: null
 author: "Bohdan"
 summary: "A hands-on project where students build autonomous robots that can follow lines using infrared sensors and microcontrollers."
 featured: true

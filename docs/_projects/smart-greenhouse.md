@@ -1,8 +1,8 @@
 ---
 layout: project
 title: "Smart Greenhouse System"
-date: 2024-03-01
-endDate: null
+start_date: 2024-03-01
+end_date: null
 author: "Emma Wilson"
 summary: "Development of an automated greenhouse monitoring and control system using IoT technology and environmental sensors."
 featured: true
