@@ -6,49 +6,12 @@
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <link rel="stylesheet" href="{{ 'styles/base.css' | relative_url }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <script type="module">
-    import { initializeNavbar } from '{{ "/js/navbar.js" | relative_url }}';
-    document.addEventListener('DOMContentLoaded', initializeNavbar);
-  </script>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">
-          <a href="/">
-              <img src="/assets/qm-logo.svg" alt="QMES Logo">
-          </a>
-      </div>
-      <div class="nav-links">
-          <a href="#" id="nav-join-link" target="_blank" rel="noopener noreferrer">Join</a>
-          <a href="/team">About us</a>
-          <a href="/projects">Projects</a>
-          <a href="/contact">Contact us</a>
-      </div>
-    </nav>
-  </header>
+  {% include header.html %}
   <main class="site-content">
     {{ content }}
   </main>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>Social Media</h4>
-        <ul>
-          <li><a href="{{ site.socialMedia.linkedin }}"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-          <li><a href="{{ site.socialMedia.github }}"><i class="fab fa-github"></i> GitHub</a></li>
-          <li><a href="{{ site.socialMedia.instagram }}"><i class="fab fa-instagram"></i> Instagram</a></li>
-          <li><a href="{{ site.socialMedia.discord }}"><i class="fab fa-discord"></i> Discord</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>Powered by Jekyll &nbsp;&nbsp; Hosted by GitHub Pages</p>
-    </div>
-  </footer>
+  {% include footer.html %}
 </body>
 </html> 
