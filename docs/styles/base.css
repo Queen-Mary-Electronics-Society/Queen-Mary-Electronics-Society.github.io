@@ -1,13 +1,16 @@
 /* Global Styles */
 :root {
-  --accent-color: #2c97c9;
-  --accent-selected: #32bdfe;
-  --accent-dark: #0079b0;
-
+  --blue-light: #32bdfe;
+  --blue: #2c97c9;
+  --blue-dim: #0079b0;
   --green: #0eca33;
   --green-dim: #086219;
   --red: #fe5b32;
   --red-dim: #af3f23;
+
+  --accent-color: var(--blue);
+  --accent-selected: var(--blue-light);
+  --accent-dark: var(--blue-dim);
 
   --text-color: #000;
   --text-bright: #fff;

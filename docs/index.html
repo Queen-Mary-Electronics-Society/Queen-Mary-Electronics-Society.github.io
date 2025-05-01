@@ -6,130 +6,154 @@ title: "Home"
 <link rel="stylesheet" href="styles/index.css">
 
 <section class="hero">
-    <div class="hero-label">
-        <div class="hero-content-container">
-            <h1 class="hero-title">
-                Building Robots!
-            </h1>
-            <p class="hero-subtitle">
-                And other exciting stuff
-            </p>
-        </div>
-        <div class="hero-decore-bar"></div>
+  <div class="hero-label">
+    <div class="hero-content-container">
+      <h1 class="hero-title">
+        Building Robots!
+      </h1>
+      <p class="hero-subtitle">
+        And other exciting stuff
+      </p>
     </div>
+    <div class="hero-decore-bar"></div>
+  </div>
 </section>
 
 <section class="about">
-    <div class="centred-content about-content">
-        <div class="about-text">
-            <h2 class="section-header">Who are we?</h2>
-            <p>
-                We are Queen Mary Robotics and Electronics Society, a place for people
+  <div class="centred-content about-content">
+    <div class="about-text">
+      <h2 class="section-header">Who are we?</h2>
+      <p>
+        We are Queen Mary Robotics and Electronics Society, a place for people                                                                                                                                                          
                 interested in robot building, arduino, coding, electronics and more!
                 From electronics to meet and build something. Interested in building working cpu,
                 line followers, manipulator arms, flying drones, nuclear missiles, okay
                 maybe not these ones, but for everything else, we got you!
-            </p>
-        </div>
-        <div class="about-image">
-            <img class="borded" src="assets/team-photo.png" alt="Team working on robotics">
-        </div>
+      </p>
     </div>
+    <div class="about-image">
+      <img
+        class="borded"
+        src="assets/team-photo.png"
+        alt="Team working on robotics">
+    </div>
+  </div>
 </section>
 
 <section class="projects">
-    <h2 class="section-header centred-content">Some of our projects</h2>
-    <div class="project-caruselle">
-        {% assign featured_projects = site.projects | where:"featured",true %}
-        {% for project in featured_projects limit:5 %}
-        <article class="featured-project-card" style="background-image: url({{project.thumbnail}})">
-            <div class="project-short-info">
-                <b>{{project.title}}</b>
-                <span class="date">
-                    {{project.start_date | date: "%m.%Y"}} -
-                    {% if project.end_date %} 
-                        {{project.end_date |  date: "%m.%Y"}}
-                    {% else %}
-                        <span class="ongoing-label">ongoing</span>
-                    {% endif %}
-                </span>
-            </div>
-            <div class="project-extended-description">
-                {{ project.summary }}
-                <a class="black-button" href="{{project.url}}">Learn More</a>
-            </div>
-        </article>
-        {% endfor %}
-    </div>
-    <div class="scroll-control">
-        <div class="black-button">
-            &lt;
+  <h2 class="section-header centred-content">Some of our projects</h2>
+  <div class="project-caruselle">
+    {% assign featured_projects = site.projects | where: "featured", true %}
+    {% for project in featured_projects limit: 5 %}
+      <article class="featured-project-card" style="background-image: url({{project.thumbnail}})">
+        <div class="project-short-info">
+          <b>{{ project.title }}</b>
+          <span class="date">
+            {{ project.start_date | date: "%m.%Y" }} -
+            {% if project.end_date %}
+              {{ project.end_date | date: "%m.%Y" }}
+            {% else %}
+              <span class="ongoing-label">ongoing</span>
+            {% endif %}
+          </span>
         </div>
-        <a href="/projects/" class="black-button">See More Projects</a>
-        <div class="black-button">
-            &gt;
+        <div class="project-extended-description">
+          {{ project.summary }}
+          <a class="black-button" href="{{project.url}}">Learn More</a>
         </div>
+      </article>
+    {% endfor %}
+  </div>
+  <div class="scroll-control">
+    <div class="black-button">
+      &lt;
     </div>
+    <a href="/projects/" class="black-button">See More Projects</a>
+    <div class="black-button">
+      &gt;
+    </div>
+  </div>
 </section>
 
 <section class="competitions">
-    <div class="centred-content">
-        <h2 class="section-header">Going to competitions</h2>
-        <div class="competition-content">
-            <div class="unibots-logo">
-                <img src="assets/unibots-uk.png" alt="Unibots UK Logo">
-            </div>
-            <div class="competition-text">
-                <h3>Unibots UK</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse leo arcu, rhoncus vitae commodo pell, dapibus in purus. Quisque convallis elit at mi, lacinia sollicitudin est lacinia. Sed ut accumsan, suscipit elit ut, interdum diam. Aliquam quis porttitor odio, et interdum libero. Proin eleifend aliquet vitae, non facilisis dui consectetur vestibulum.</p>
-            </div>
-        </div>
+  <div class="centred-content">
+    <h2 class="section-header">Going to competitions</h2>
+    <div class="competition-content">
+      <div class="unibots-logo">
+        <img src="assets/unibots-uk.png" alt="Unibots UK Logo">
+      </div>
+      <div class="competition-text">
+        <h3>Unibots UK</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse leo arcu, rhoncus vitae commodo pell, dapibus in purus. Quisque convallis elit at mi, lacinia sollicitudin est lacinia. Sed ut accumsan, suscipit elit ut, interdum diam. Aliquam quis porttitor odio, et interdum libero. Proin eleifend aliquet vitae, non facilisis dui consectetur vestibulum.</p>
+      </div>
     </div>
+  </div>
 </section>
 
 <section class="sponsors">
-    <div class="centred-content">
-        <h2 class="section-header">Proudly sponsored by</h2>
+  <div class="centred-content">
+    <h2 class="section-header">Proudly sponsored by</h2>
+  </div>
+  <div class="sponsor-grid">
+    <div class="sponsor-item">
+      <img src="assets/sponsor-logo.png" alt="Sponsor">
+      <p>Sponsor name</p>
     </div>
-    <div class="sponsor-grid">
-        <div class="sponsor-item">
-            <img src="assets/sponsor-logo.png" alt="Sponsor">
-            <p>Sponsor name</p>
-        </div>
-        <div class="sponsor-item">
-            <img src="assets/sponsor-logo.png" alt="Sponsor">
-            <p>Sponsor name</p>
-        </div>
-        <div class="sponsor-item">
-            <img src="assets/sponsor-logo.png" alt="Sponsor">
-            <p>Sponsor name</p>
-        </div>
-        <div class="sponsor-item">
-            <img src="assets/sponsor-logo.png" alt="Sponsor">
-            <p>Sponsor name</p>
-        </div>
+    <div class="sponsor-item">
+      <img src="assets/sponsor-logo.png" alt="Sponsor">
+      <p>Sponsor name</p>
     </div>
+    <div class="sponsor-item">
+      <img src="assets/sponsor-logo.png" alt="Sponsor">
+      <p>Sponsor name</p>
+    </div>
+    <div class="sponsor-item">
+      <img src="assets/sponsor-logo.png" alt="Sponsor">
+      <p>Sponsor name</p>
+    </div>
+  </div>
 </section>
 
 <section class="cta-section">
-    <div class="centred-content">
-        <h2 class="section-header">Sounds interesting?</h2>
-        <div class="cta-grid">
-            <a href="https://www.qmsu.org/groups/qmml/" class="cta-card join" style="background-image: url('assets/robot-arm.jpg')" target="_blank" rel="noopener noreferrer">
-                <div class="cta-content">
-                    <h3>Join us</h3>
-                </div>
-            </a>
-            <a href="contact.html" class="cta-card sponsor" style="background-image: url('assets/money.jpg')">
-                <div class="cta-content">
-                    <h3>Sponsor us</h3>
-                </div>
-            </a>
-            <a href="contact.html" class="cta-card contact" style="background-image: url('assets/contact.jpg')">
-                <div class="cta-content">
-                    <h3>Contact us</h3>
-                </div>
-            </a>
+  <div class="centred-content">
+    <h2 class="section-header">Sounds interesting?</h2>
+    <div class="cta-grid">
+      <a
+        href="https://www.qmsu.org/groups/qmml/"
+        class="cta-card join"
+        target="_blank"
+        rel="noopener noreferrer">
+        <div class="cta-content">
+          <h3>Join us</h3>
         </div>
+        <div class="cta-background">
+          <img src="assets/robot-icon.svg" style="bottom: -7px; left: 0px; height: 100%; transform: scale(0.95) ;">
+          <img src="assets/robot-icon.svg" style="bottom: -35%; left: 50%; height: 100%; transform: scaleX(-1) scale(0.8);">
+        </div>
+      </a>
+      <a href="contact.html" class="cta-card sponsor">
+        <div class="cta-content">
+          <h3>Sponsor us</h3>
+        </div>
+        <div class="cta-background">
+          <img src="assets/3-dolla-bills-icon.svg" style="left: 70%; bottom: 10px; height: 50%;">
+          <img src="assets/waving-dolla-bills.svg" style="top: 0px; left: 0px; height: 50%;">
+          <img src="assets/pound-icon.svg" style="top: 0px; left: 70%; height: 20%; transform: rotate(65deg);">
+          <img src="assets/pound-icon.svg" style="bottom: 20%; left: 20%; height: 20%;">
+          <img src="assets/pound-icon.svg" style="bottom: -10%; left: 46%; height: 20%; transform: rotate(80deg);">
+        </div>
+      </a>
+      <a href="contact.html" class="cta-card contact">
+        <div class="cta-content">
+          <h3>Contact us</h3>
+        </div>
+        <div class="cta-background">
+          <img src="assets/phone-icon.svg" style="left: 20%; top: 10px; height: 50%;">
+          <img src="assets/contract-icon.svg" style="bottom: -5%; left: 5%; height: 50%;">
+          <img src="assets/contract-icon.svg" style="bottom: -15%; right: 20%; height: 50%; transform: rotate(35deg);">
+          <img src="assets/email-icon.svg" style="top: 0px; right: 10%; height: 50%;">
+        </div>
+      </a>
     </div>
+  </div>
 </section>
