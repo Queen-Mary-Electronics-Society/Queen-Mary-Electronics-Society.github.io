@@ -232,7 +232,7 @@ section{
   height: 100%;
   width: 100%;
 }
-.cta-background > img{
+.cta-background > *{
   position: absolute;
   z-index: 0;
 }
@@ -275,4 +275,29 @@ section{
   color: white;
   font-size: 24px;
   margin-top: 8px;
+}
+
+.robot-arm-left{
+  bottom: -7px; 
+  left: 0px; 
+  height: 95%;
+
+  transition: translate 0.2s ease;
+}
+
+.robot-arm-right{
+  bottom: -25%;
+  left: 50%;
+  height: 80%;
+  transform: scaleX(-1);
+
+  transition: translate 0.3s ease;
+}
+
+.cta-card:hover .robot-arm-left{
+  translate: 0px -30px;
+}
+
+.cta-card:hover .robot-arm-right{
+  translate: 0px -30px;
 }

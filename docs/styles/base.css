@@ -1114,3 +1114,7 @@ footer {
   }
 }
 
+/* For Animations */
+.spawn-objects-container{
+  display: none;
+}
