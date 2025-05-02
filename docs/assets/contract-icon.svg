@@ -1,11 +1,64 @@
-<svg width="217" height="216" viewBox="0 0 217 216" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_91_302)">
-<path d="M26.022 69.7684L85.2586 196.303L159.071 161.748L174.549 112.429L131.468 20.4043L26.022 69.7684ZM151.766 146.141L141.795 124.841L161.32 115.7L151.766 146.141ZM157.945 104.425L126.313 119.234L143.59 156.14L90.8665 180.822L41.5024 75.3764L125.859 35.8853L157.945 104.425Z" fill="#AF3F23"/>
-<path d="M56.9842 80.9838L120.252 51.3652L125.188 61.9093L61.9204 91.5279L56.9842 80.9838ZM66.8573 102.074L119.58 77.3918L124.516 87.936L71.7935 112.618L66.8573 102.074ZM76.7297 123.162L108.364 108.353L113.3 118.897L81.6659 133.706L76.7297 123.162Z" fill="#AF3F23"/>
-</g>
-<defs>
-<clipPath id="clip0_91_302">
-<rect width="163" height="163" fill="white" transform="translate(0 69.1096) rotate(-25.0865)"/>
-</clipPath>
-</defs>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="217"
+   height="216"
+   viewBox="0 0 217 216"
+   fill="none"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="contract-icon.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.9416188"
+     inkscape:cx="73.13485"
+     inkscape:cy="128.50102"
+     inkscape:window-width="1440"
+     inkscape:window-height="770"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g2" />
+  <g
+     clip-path="url(#clip0_91_302)"
+     id="g2"
+     transform="rotate(25.096943,100.2855,108.35365)">
+    <path
+       style="fill:#fe5b32;stroke:none;stroke-width:3.95717;stroke-linecap:square;stroke-miterlimit:3;stroke-opacity:1;fill-opacity:1"
+       d="m 57.168791,48.928245 -0.515034,124.123235 74.679953,-0.51504 30.38702,-33.47722 -1.54511,-90.646009 z"
+       id="path3"
+       transform="rotate(-25.096943,100.2855,108.35365)" />
+    <path
+       d="M 26.022,69.7684 85.2586,196.303 159.071,161.748 174.549,112.429 131.468,20.4043 Z m 125.744,76.3726 -9.971,-21.3 19.525,-9.141 z m 6.179,-41.716 -31.632,14.809 L 143.59,156.14 90.8665,180.822 41.5024,75.3764 125.859,35.8853 Z"
+       fill="#af3f23"
+       id="path1"
+       style="stroke:none;stroke-opacity:1" />
+    <path
+       d="m 56.9842,80.9838 63.2678,-29.6186 4.936,10.5441 -63.2676,29.6186 z m 9.8731,21.0902 52.7227,-24.6822 4.936,10.5442 -52.7225,24.682 z m 9.8724,21.088 31.6343,-14.809 4.936,10.544 -31.6341,14.809 z"
+       fill="#af3f23"
+       id="path2" />
+  </g>
+  <defs
+     id="defs2">
+    <clipPath
+       id="clip0_91_302">
+      <rect
+         width="163"
+         height="163"
+         fill="white"
+         transform="translate(0 69.1096) rotate(-25.0865)"
+         id="rect2" />
+    </clipPath>
+  </defs>
 </svg>

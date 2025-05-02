@@ -131,6 +131,7 @@ class FallingItemsAnimator{
         const rotation = Math.random() * 360;
 
         instance.style.transform = `rotate(${rotation}deg) scale(${scale})`
+        instance.style.zIndex = Math.floor((1 - depth)*10);
 
         const container_height = this.container.getBoundingClientRect().height;
 

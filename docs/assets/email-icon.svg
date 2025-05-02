@@ -1,10 +1,63 @@
-<svg width="132" height="132" viewBox="0 0 132 132" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_91_312)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M123.922 54.2882L103.952 115.549L89.7876 77.8794L84.0602 80.0338L98.3609 118.076L8.10125 88.6527L42.074 66.3471L38.7167 61.2313L5.07322 83.3161L25.0431 22.0555L60.5048 81.0411L123.922 54.2882ZM127.314 43.8705L126.431 46.5807L63.0192 73.3356L27.5575 14.35L28.441 11.6397L127.314 43.8705Z" fill="#AF3F23"/>
-</g>
-<defs>
-<clipPath id="clip0_91_312">
-<rect width="104" height="104" fill="white" transform="translate(32.2327) rotate(18.055)"/>
-</clipPath>
-</defs>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="132"
+   height="132"
+   viewBox="0 0 132 132"
+   fill="none"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="email-icon.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:export-bgcolor="#ffffffff"
+     inkscape:zoom="5.106495"
+     inkscape:cx="61.881976"
+     inkscape:cy="67.854762"
+     inkscape:window-width="1440"
+     inkscape:window-height="770"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <rect
+     style="stroke:none;stroke-opacity:1;fill:#fe5b32;fill-opacity:1;stroke-width:10.00000006;stroke-linecap:square;stroke-miterlimit:3;stroke-dasharray:none;stroke-linejoin:miter"
+     id="rect2"
+     width="104.0006"
+     height="79.524872"
+     x="30.641006"
+     y="2.2535777"
+     inkscape:label="rect2"
+     transform="matrix(0.99999994,3.2563071e-4,-2.7162099e-4,0.99999996,-14.50077,21.445104)" />
+  <path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="M 123.922,54.2882 103.952,115.549 89.7876,77.8794 84.0602,80.0338 98.3609,118.076 8.10125,88.6527 42.074,66.3471 38.7167,61.2313 5.07322,83.3161 25.0431,22.0555 60.5048,81.0411 Z m 3.392,-10.4177 -0.883,2.7102 L 63.0192,73.3356 27.5575,14.35 28.441,11.6397 Z"
+     fill="#af3f23"
+     id="path1"
+     style="stroke:none;stroke-opacity:1"
+     transform="rotate(-18.035252,60.314614,56.408715)" />
+  <defs
+     id="defs1">
+    <clipPath
+       id="clip0_91_312">
+      <rect
+         width="104"
+         height="104"
+         fill="white"
+         transform="translate(32.2327) rotate(18.055)"
+         id="rect1" />
+    </clipPath>
+  </defs>
 </svg>
