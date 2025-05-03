@@ -1,7 +1,6 @@
 /* Global Styles */
 :root {
-  --blue-light: #32bdfe;
-  --blue: #2c97c9;
+  --blue: #32bdfe;
   --blue-dim: #0079b0;
   --green: #0eca33;
   --green-dim: #086219;
@@ -9,7 +8,6 @@
   --red-dim: #af3f23;
 
   --accent-color: var(--blue);
-  --accent-selected: var(--blue-light);
   --accent-dark: var(--blue-dim);
 
   --text-color: #000;
@@ -54,7 +52,7 @@ body {
 }
 
 .black-button:hover{
-  color: var(--accent-selected);
+  color: var(--accent-color);
 }
 
 /* Header Styles */
@@ -93,7 +91,7 @@ nav {
 }
 
 .nav-links a:hover {
-  color: var(--accent-selected);
+  color: var(--accent-color);
 }
 
 /* Footer Styles */
@@ -117,7 +115,7 @@ footer a {
 }
 
 footer a:hover {
-  color: var(--accent-selected);
+  color: var(--accent-color);
 }
 
 .footer-section h4 {

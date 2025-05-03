@@ -148,7 +148,7 @@ section{
 }
 
 .ongoing-label{
-  color: var(--accent-color);
+  color: var(--accent-dark);
 }
 
 .scroll-control{
@@ -239,7 +239,7 @@ section{
 
 .cta-card.join {
   aspect-ratio: 1046/465;
-  background-color: var(--blue-light);
+  background-color: var(--blue);
 }
 
 .cta-card.sponsor {
