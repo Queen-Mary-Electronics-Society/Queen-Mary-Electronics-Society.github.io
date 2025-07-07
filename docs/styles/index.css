@@ -67,7 +67,7 @@ section{
 
 /* Projects Section */
 .projects {
-  background-color: #f5f5f5;
+  background-color: var(--background-alt-color);
   overflow: hidden;
 }
 
@@ -177,7 +177,7 @@ section{
 /* Sponsors Section */
 .sponsors {
   padding: 80px 32px;
-  background-color: #f5f5f5;
+  background-color: var(--background-alt-color);
 }
 
 .sponsor-grid {
