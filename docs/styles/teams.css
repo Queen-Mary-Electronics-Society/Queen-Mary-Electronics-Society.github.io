@@ -1,0 +1,29 @@
+.role-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    margin-top: 20px;
+}
+
+.name-and-position{
+    text-align: center;
+}
+
+.team-photo{
+    display: flex;
+    justify-content: center;
+    max-height: 500px;
+}
+
+.team-photo img{
+    object-fit: contain;
+    width: 100%;
+}
+
+.page-title{
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}

@@ -20,6 +20,8 @@
   /* Compatability colours, remove once you figure out what they do*/
   --card-bg: #fff;
   --hover-bg: #f5f5f5;
+  
+  --section-hor-padding: 32px;
 }
 
 * {
@@ -41,6 +43,19 @@ body {
 
 .date{
   font-family: monospace;
+}
+
+section{
+  padding: 40px var(--section-hor-padding);
+}
+
+.alt-bg-section{
+  background-color: var(--background-alt-color);
+}
+
+.centred-content{
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .black-button{
@@ -739,194 +754,6 @@ footer a:hover {
 .slider-handle:focus {
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
-}
-
-/* Team Section Styles */
-.team-section {
-  padding: 32px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.team-section h1 {
-  text-align: center;
-  margin-bottom: 32px;
-  color: var(--accent-color);
-}
-
-.role-group {
-  margin-bottom: 48px;
-}
-
-.role-group h2 {
-  color: var(--secondary-color);
-  margin-bottom: 24px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--accent-color);
-}
-
-.members-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 32px;
-}
-
-.team-member {
-  background: var(--card-bg);
-  border-radius: 10px;
-  padding: 24px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.team-member-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.team-member-link:hover .team-member {
-  transform: translateY(-5px);
-}
-
-.team-member:hover {
-  transform: translateY(-5px);
-}
-
-.member-profile {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 16px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--accent-color);
-}
-
-.member-profile img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.member-info h3 {
-  color: var(--accent-color);
-  margin-bottom: 8px;
-}
-
-.member-info p {
-  color: var(--text-color);
-  font-size: 17.6px;
-}
-
-.member-info p a {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.member-info p a:hover {
-  color: var(--accent-color);
-  text-decoration: underline;
-}
-
-/* Dropdown Menu Styles */
-.nav-links .dropdown {
-  margin-left: 0;
-}
-
-.submenu {
-  position: relative;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-btn,
-.submenu-btn {
-  background: none;
-  border: none;
-  color: var(--text-color);
-  padding: 8px 16px;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.dropdown-btn:hover,
-.submenu-btn:hover {
-  color: var(--accent-color);
-}
-
-.dropdown-content,
-.submenu-content {
-  display: none;
-  position: absolute;
-  background: var(--card-bg);
-  min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  z-index: 1000;
-}
-
-/* Make both dropdown and submenu visible when .show is toggled */
-.dropdown-content.show,
-.submenu-content.show {
-  display: block;
-}
-
-/* Ensure submenu is positioned to the right of its parent */
-.submenu-content {
-  left: 100%;
-  top: 0;
-}
-
-.dropdown-content a,
-.submenu-content a {
-  color: var(--text-color);
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.3s;
-}
-
-.dropdown-content a:hover,
-.submenu-content a:hover {
-  background-color: var(--hover-bg);
-  color: var(--accent-color);
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .members-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-
-  .dropdown-content {
-    position: static;
-    width: 100%;
-  }
-
-  .submenu-content {
-    position: static;
-    width: 100%;
-    padding-left: 16px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .project-cards .project-card {
-    flex: 0 0 calc(50% - 16px); /* For 2 cards per view */
-  }
-}
-
-@media (max-width: 768px) {
-  .project-cards .project-card {
-    flex: 0 0 100%; /* For 1 card per view */
-  }
 }
 
 /* For Animations */

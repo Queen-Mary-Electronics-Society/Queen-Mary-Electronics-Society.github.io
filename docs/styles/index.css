@@ -1,7 +1,3 @@
-:root{
-  --section-hor-padding: 32px;
-}
-
 /* Hero Section */
 .hero {
   height: 453px;
@@ -41,14 +37,6 @@
 }
 
 /* Sections */
-section{
-  padding: 40px var(--section-hor-padding);
-}
-
-.centred-content{
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
 .section-header{
   margin-bottom: 30px;
@@ -67,7 +55,6 @@ section{
 
 /* Projects Section */
 .projects {
-  background-color: var(--background-alt-color);
   overflow: hidden;
 }
 
@@ -177,7 +164,6 @@ section{
 /* Sponsors Section */
 .sponsors {
   padding: 80px 32px;
-  background-color: var(--background-alt-color);
 }
 
 .sponsor-grid {

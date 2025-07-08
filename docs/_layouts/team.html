@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="/styles/teams.css">
+
+<section>
+    <h1 class="page-title">{{page.commettee_name}} Commettee</h1>
+    <div class="team-photo">
+        <img src="{{ page.team_picture }}" alt="Picture of {{ page.commettee_name }} commettee">
+    </div>
+</section>
+
+<section class="alt-bg-section">
+  <div class="centred-content">
+    <h1>Roles</h1>
+    <div class="role-container">
+      {% for item in page.commettee %}
+        <div>
+          <img width="200px" height="200px">
+          <div class="name-and-position">
+            <p>{{ item.name }}</p>
+            <b>{{ item.role }}</b>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ content }}
