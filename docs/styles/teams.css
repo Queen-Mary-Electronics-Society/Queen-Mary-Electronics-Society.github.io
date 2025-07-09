@@ -7,23 +7,32 @@
     margin-top: 20px;
 }
 
+.role-container img{
+    object-fit: cover;
+}
+
 .name-and-position{
     text-align: center;
 }
 
 .team-photo{
-    display: flex;
-    justify-content: center;
-    max-height: 500px;
+    border: var(--black) 1px solid;
 }
 
 .team-photo img{
     object-fit: contain;
-    width: 100%;
+    max-height: 500px;
+    border-top: var(--black) 1px solid;
+    display: block;
+}
+
+.team-photo-section{
+    display: flex;
+    justify-content: center;
 }
 
 .page-title{
-    text-align: center;
     font-size: 32px;
-    margin-bottom: 20px;
+    width: fit-content;
+    padding: 20px;
 }

@@ -4,9 +4,9 @@ layout: default
 
 <link rel="stylesheet" href="/styles/teams.css">
 
-<section>
-    <h1 class="page-title">{{page.commettee_name}} Commettee</h1>
+<section class="team-photo-section">
     <div class="team-photo">
+        <h1 class="page-title">{{page.commettee_name}} Commettee</h1>
         <img src="{{ page.team_picture }}" alt="Picture of {{ page.commettee_name }} commettee">
     </div>
 </section>
@@ -17,7 +17,7 @@ layout: default
     <div class="role-container">
       {% for item in page.commettee %}
         <div>
-          <img width="200px" height="200px">
+          <img src="{{ item.image }}" width="200px" height="200px" class="bordered">
           <div class="name-and-position">
             <p>{{ item.name }}</p>
             <b>{{ item.role }}</b>
