@@ -5,6 +5,19 @@ layout: default
 <link rel="stylesheet" href="/styles/teams.css">
 
 <section class="team-photo-section">
+    <div class="backdrop">
+      <div class="spawn-objects-container">
+        <img src="/assets/icons/backdrop_gen/capacitor.svg">
+        <!-- <img src="/assets/icons/backdrop_gen/chip.svg"> -->
+        <img src="/assets/icons/backdrop_gen/diode.svg">
+        <img src="/assets/icons/backdrop_gen/resistor.svg">
+        <img src="/assets/icons/backdrop_gen/coil.svg">
+        <img src="/assets/icons/backdrop_gen/omp-amp.svg">
+        <img src="/assets/icons/backdrop_gen/transforemer.svg">
+        <!-- <img src="/assets/icons/backdrop_gen/robot.svg"> -->
+        <img src="/assets/icons/backdrop_gen/capacitor.svg">
+      </div>
+    </div>
     <div class="team-photo">
         <h1 class="page-title">{{page.commettee_name}} Commettee</h1>
         <img src="{{ page.team_picture }}" alt="Picture of {{ page.commettee_name }} commettee">
@@ -29,3 +42,5 @@ layout: default
 </section>
 
 {{ content }}
+
+<script src="/js/backdrop-generator.js"></script>
