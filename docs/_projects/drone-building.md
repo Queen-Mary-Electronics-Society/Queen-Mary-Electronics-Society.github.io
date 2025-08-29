@@ -1,12 +1,13 @@
 ---
 layout: project
 title: "Custom Drone Building"
+date: 2024-01-30
 start_date: 2024-01-30
 end_date: null
 author: "Alex Thompson"
 summary: "Build and program custom quadcopter drones, learning about flight dynamics, control systems, and aerial robotics."
 featured: true
-thumbnail: "/assets/projects/drone-building/thumbnail.jpg"
+thumbnail: "assets/projects/drone-building/thumbnail.jpg"
 tags:
   - drones
   - electronics

@@ -1,15 +1,15 @@
 <header>
   <nav>
     <div class="logo">
-        <a href="/">
-            <img src="/assets/qm-logo.svg" alt="QMES Logo">
+        <a href="{{ '/' | relative_url }}">
+            <img src="{{ '/assets/qm-logo.svg' | relative_url }}" alt="QMES Logo">
         </a>
     </div>
     <div class="nav-links">
         <a href="#" id="nav-join-link" target="_blank" rel="noopener noreferrer">Join</a>
-        <a href="/team">About us</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact us</a>
+        <a href="{{ '/team/' | relative_url }}">About us</a>
+        <a href="{{ '/projects/' | relative_url }}">Projects</a>
+        <a href="{{ '/contact.html' | relative_url }}">Contact us</a>
     </div>
   </nav>
 </header>
