@@ -23,7 +23,7 @@ plugins:
 collections:
   projects:
     output: true
-    permalink: /projects/:path/
+    permalink: /projects/:path
 
 # Default front matter
 defaults:
