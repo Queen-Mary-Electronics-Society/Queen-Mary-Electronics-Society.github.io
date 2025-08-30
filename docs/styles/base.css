@@ -96,7 +96,7 @@ nav {
 
 /* Footer Styles */
 footer {
-  background-color: var(--dark);
+  background-color: #0eca33;
   color: var(--text-bright);
   padding: 48px 32px 16px;
   margin-top: 64px;
