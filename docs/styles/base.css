@@ -57,7 +57,7 @@ body {
 
 /* Header Styles */
 header {
-  background-color: var(--dark);
+  background-color: #0eca33;
   position: sticky;
   top: 0;
   left: 0;
