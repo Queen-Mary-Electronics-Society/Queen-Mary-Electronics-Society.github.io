@@ -46,16 +46,16 @@ title: "Contact Us"
     <div class="connect-section">
         <h2>Connect With Us</h2>
         <div class="social-links">
-            <a href="#" id="discord-link" class="social-link">
-                <i class="fab fa-discord"></i> Join our Discord Server
+            <a href="https://www.qmsu.org/groups/26265/" class="social-link" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-users"></i> Join us
             </a>
-            <a href="#" id="linkedin-link" class="social-link">
+            <a href="{{ site.socialMedia.linkedin }}" class="social-link" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin"></i> Follow our LinkedIn page
             </a>
-            <a href="#" id="instagram-link" class="social-link">
+            <a href="{{ site.socialMedia.instagram }}" class="social-link" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-instagram"></i> Follow us on Instagram
             </a>
-            <a href="#" id="email-link" class="social-link">
+            <a href="mailto:{{ site.contact.email }}" class="social-link">
                 <i class="far fa-envelope"></i> Email us directly
             </a>
         </div>
@@ -93,4 +93,4 @@ title: "Contact Us"
 
         form.classList.add('was-validated');
     });
-</script> 
+</script>
