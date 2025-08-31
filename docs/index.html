@@ -1,0 +1,190 @@
+---
+layout: default
+title: "Home"
+---
+
+<link rel="stylesheet" href="styles/index.css">
+
+<section class="hero">
+  <div class="hero-label">
+    <div class="hero-content-container">
+      <h1 class="hero-title">
+        Building Robots!
+      </h1>
+      <p class="hero-subtitle">
+        And other exciting stuff
+      </p>
+    </div>
+    <div class="hero-decore-bar"></div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="centred-content about-content">
+    <div class="about-text">
+      <h2 class="section-header">Who are we?</h2>
+      <p>
+<<<<<<< HEAD
+      Founded in 2024, the Queen Mary Electronics Society has quickly grown into one of the largest and most inclusive societies on campus. Built on the dedication of its members, the society offers a welcoming space for anyone interested in electronics, from beginners to experts.
+
+In just its first year, the society achieved national recognition by placing third in Unibots 2025, showcasing the talent and teamwork of its community. Through workshops, projects, and competitions, the society continues to inspire innovation and collaboration, making it a thriving hub of creativity at Queen Mary.                                                                                                                                                                                                      
+      </p>
+=======
+          Founded in 2024, the Queen Mary Electronics Society has quickly grown into one of the largest and most inclusive societies on campus. Built on the dedication of its members, the society offers a welcoming space for anyone interested in electronics, from beginners to experts.
+
+In just its first year, the society achieved national recognition by placing third in Unibots 2025, showcasing the talent and teamwork of its community. Through workshops, projects, and competitions, the society continues to inspire innovation and collaboration, making it a thriving hub of creativity at Queen Mary.
+                                                                                                                                                                                          
+     
+     
+     
+              </p>
+>>>>>>> origin/prod
+    </div>
+    <div class="about-image">
+      <img
+        class="borded"
+        src="assets/team-photo.JPG"
+        alt="Team working on robotics">
+    </div>
+  </div>
+</section>
+
+<section class="projects">
+  <h2 class="section-header centred-content">Some of our projects</h2>
+  <div class="project-caruselle">
+    {% assign featured_projects = site.projects | where: "featured", true %}
+    {% for project in featured_projects limit: 5 %}
+      <article class="featured-project-card" style="background-image: url({{project.thumbnail}})">
+        <div class="project-short-info">
+          <b>{{ project.title }}</b>
+          <span class="date">
+            {{ project.start_date | date: "%m.%Y" }} -
+            {% if project.end_date %}
+              {{ project.end_date | date: "%m.%Y" }}
+            {% else %}
+              <span class="ongoing-label">ongoing</span>
+            {% endif %}
+          </span>
+        </div>
+        <div class="project-extended-description">
+          {{ project.summary }}
+          <a class="black-button" href="{{project.url}}">Learn More</a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+  <div class="scroll-control">
+    <div class="black-button">
+      &lt;
+    </div>
+    <a href="/projects/" class="black-button">See More Projects</a>
+    <div class="black-button">
+      &gt;
+    </div>
+  </div>
+</section>
+
+<section class="competitions">
+  <div class="centred-content">
+    <h2 class="section-header">QMES Mission</h2>
+    <div class="competition-content">
+      <div class="about-image">
+        <img class="borded" src="assets/unibots-comp-pic.JPG" alt="QMES Competition Photo">
+      </div>
+      <div class="competition-text">
+<<<<<<< HEAD
+                <p>1.	Engagement: hosting weekly electronics-focused activities for STEM students and anyone curious about the world of electronics.
+=======
+        <p>1.	Engagement: hosting weekly electronics-focused activities for STEM students and anyone curious about the world of electronics.
+>>>>>>> origin/prod
+	2.	Excellence: competing in at least three national or international electronics-related competitions each year.
+	3.	Outreach: promoting electronics education and inspiring the next generation through workshops and community initiatives.
+</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sponsors">
+  <div class="centred-content">
+    <h2 class="section-header">Proudly sponsored by</h2>
+  </div>
+  <div class="sponsor-grid">
+    <div class="sponsor-item">
+      <img src="assets/sponsor-logo.png" alt="Sponsor">
+      <p>Sponsor name</p>
+    </div>
+    <div class="sponsor-item">
+      <img src="assets/sponsor-logo.png" alt="Sponsor">
+      <p>Sponsor name</p>
+    </div>
+    <div class="sponsor-item">
+      <img src="assets/sponsor-logo.png" alt="Sponsor">
+      <p>Sponsor name</p>
+    </div>
+    <div class="sponsor-item">
+      <img src="assets/sponsor-logo.png" alt="Sponsor">
+      <p>Sponsor name</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="centred-content">
+    <h2 class="section-header">Sounds interesting?</h2>
+    <div class="cta-grid">
+      <a
+        href="https://www.qmsu.org/groups/26265/"
+        class="cta-card join"
+        target="_blank"
+        rel="noopener noreferrer">
+        <div class="cta-content">
+          <h3>Join us</h3>
+        </div>
+        <div class="cta-background">
+          <img src="assets/robot-icon.svg" class="robot-arm-left">
+          <img src="assets/robot-icon.svg" class="robot-arm-right">
+        </div>
+      </a>
+      <a href="contact.html" class="cta-card sponsor">
+        <div class="cta-content">
+          <h3>Sponsor us</h3>
+        </div>
+        <div class="cta-background item-fall-animation">
+          <div class="spawn-objects-container">
+            <img src="assets/3-dolla-bills-icon.svg">
+            <img src="assets/waving-dolla-bills.svg">
+            <img src="assets/pound-icon.svg">
+            <img src="assets/pound-icon.svg">
+          </div>
+        <!-- animations.js will use these items to make them fall -->
+        </div>
+      </a>
+      <a href="contact.html" class="cta-card contact">
+        <div class="cta-content">
+          <h3>Contact us</h3>
+        </div>
+        <div class="cta-background item-fall-animation">
+          <div class="spawn-objects-container">
+            <img src="assets/phone-icon.svg" style="left: 20%; top: 15%; height: 60%;">
+            <img src="assets/contract-icon.svg" style="bottom: -15%; left: 5%; height: 70%;">
+            <img src="assets/contract-icon.svg" style="bottom: -30%; right: 20%; height: 70%; transform: rotate(35deg);">
+            <img src="assets/email-icon.svg" style="top: 0px; right: 10%; height: 50%;">
+          </div>
+        <!-- animations.js will use these items to make them fall -->
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script src="js/animations.js"></script>
+<script>
+    const containers = document.getElementsByClassName("item-fall-animation");
+    Array.from(containers).forEach((container) => {
+      const anim = new FallingItemsAnimator(container);
+      anim.scatter();
+      container.parentElement.addEventListener("mouseover", anim.play.bind(anim));
+      container.parentElement.addEventListener("mouseout", anim.freeze.bind(anim));
+    })
+</script>
