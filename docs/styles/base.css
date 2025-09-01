@@ -224,7 +224,7 @@ footer a:hover {
     right: -100%;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg, var(--green) 0%, var(--green-dim) 100%);
+    background-color: #0eca33;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -233,24 +233,11 @@ footer a:hover {
     z-index: 1000;
     padding: 0;
     margin: 0;
-    backdrop-filter: blur(10px);
   }
 
   /* Show nav links when menu is active */
   .nav-links.active {
     right: 0;
-  }
-
-  /* Add backdrop overlay */
-  .nav-links::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: -1;
   }
 
   /* Style nav links for mobile */
