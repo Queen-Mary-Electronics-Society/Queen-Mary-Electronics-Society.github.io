@@ -13,5 +13,11 @@
     {{ content }}
   </main>
   {% include footer.html %}
+  
+  <!-- Initialize navbar functionality -->
+  <script type="module">
+    import { initializeNavbar } from '{{ "js/navbar.js" | relative_url }}';
+    document.addEventListener('DOMContentLoaded', initializeNavbar);
+  </script>
 </body>
 </html> 
