@@ -301,3 +301,83 @@ section{
 .cta-card:hover .robot-arm-right{
   translate: 0px -30px;
 }
+
+/* Desktop/Tablet Responsive Styles for larger images */
+@media (min-width: 769px) {
+  .about-image img.borded,
+  .competition-content .about-image img.borded {
+    min-height: 300px;
+    object-fit: cover;
+  }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Make hero section more mobile-friendly */
+  .hero-label {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .hero-title {
+    font-size: 48px;
+  }
+  
+  .hero-subtitle {
+    font-size: 24px;
+  }
+  
+  /* Make about section stack vertically on mobile */
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  /* Make bordered images larger on mobile */
+  .about-image img.borded,
+  .competition-content .about-image img.borded {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  /* Make competition section stack vertically */
+  .competition-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  /* Ensure images in competition section are prominent */
+  .competition-content .about-image {
+    order: -1; /* Move image to top on mobile */
+  }
+  
+  /* Make sponsor grid more mobile-friendly */
+  .sponsor-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even smaller screens - make images even more prominent */
+  .about-image img.borded,
+  .competition-content .about-image img.borded {
+    min-height: 200px;
+    border-radius: 12px;
+  }
+  
+  /* Single column for sponsors on very small screens */
+  .sponsor-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  /* Reduce section padding on small screens */
+  section {
+    padding: 24px 16px;
+  }
+}

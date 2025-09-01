@@ -35,7 +35,16 @@ body {
 
 /* Global Syle library*/
 .borded{
-  border: var(--black) 1px solid;
+  border: var(--black) 2px solid;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+  height: auto;
+}
+
+.borded:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .date{
