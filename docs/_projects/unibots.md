@@ -8,7 +8,7 @@ author: "Muhie Al Haimus"
 summary: >
 
 featured: true
-thumbnail: "assets/projects/arduino-workshop/thumbnail.png"
+thumbnail: "assets/projects/unibots/thumbnail.png"
 tags:
   - Competitions
   - 
