@@ -3,7 +3,7 @@ layout: project
 title: "Queen Mary Electronics Society Comes Third Place at Unibots 2025"
 date: 2025-05-30
 start_date: 2025-05-30
-end_date: null
+end_date: 2025-05-30
 author: "Muhie Al Haimus"
 summary: >
 
