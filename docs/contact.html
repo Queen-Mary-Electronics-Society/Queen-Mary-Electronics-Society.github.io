@@ -9,9 +9,12 @@ title: "Contact Us"
     <h1>Have a question or want to collaborate? We'd love to hear from you!</h1>
     
     <div class="contact-form-wrapper">
-        <form id="contactForm" class="contact-form needs-validation" novalidate>
+        <form id="contactForm" class="contact-form needs-validation" action="https://formspree.io/f/qmelectronicssociety@qmsu.org" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="New Contact Form Submission - QMES Website">
+            <input type="hidden" name="_captcha" value="false">
+            
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Full name" required>
+                <input type="text" class="form-control" id="fullname" name="name" placeholder="Full name" required>
                 <label for="fullname">Full name</label>
                 <div class="invalid-feedback">
                     Please enter your name
@@ -41,6 +44,11 @@ title: "Contact Us"
                 </div>
             </button>
         </form>
+        
+        <!-- Success message -->
+        <div id="successMessage" class="alert alert-success mt-3 d-none">
+            <i class="fas fa-check-circle"></i> Thank you for your message! We will get back to you soon.
+        </div>
     </div>
 
     <div class="connect-section">
@@ -71,26 +79,31 @@ title: "Contact Us"
     const form = document.getElementById('contactForm');
     const submitBtn = form.querySelector('.submit-btn');
     const spinner = submitBtn.querySelector('.spinner-border');
+    const successMessage = document.getElementById('successMessage');
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
         if (!form.checkValidity()) {
+            event.preventDefault();
             event.stopPropagation();
-        } else {
-            // Show loading state
-            submitBtn.disabled = true;
-            spinner.classList.remove('d-none');
-
-            // Simulate form submission (replace with actual form submission)
-            setTimeout(() => {
-                alert('Thank you for your message! We will get back to you soon.');
-                form.reset();
-                submitBtn.disabled = false;
-                spinner.classList.add('d-none');
-            }, 1000);
+            form.classList.add('was-validated');
+            return;
         }
 
-        form.classList.add('was-validated');
+        // Show loading state
+        submitBtn.disabled = true;
+        spinner.classList.remove('d-none');
+
+        // Let the form submit naturally to Formspree
+        // The form will be processed and email sent to qmelectronicssociety@qmsu.org
+    });
+
+    // Handle successful form submission (when returning from Formspree)
+    window.addEventListener('load', function() {
+        if (window.location.search.includes('success')) {
+            successMessage.classList.remove('d-none');
+            form.reset();
+            // Clean up URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
     });
 </script>

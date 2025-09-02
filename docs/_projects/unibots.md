@@ -5,7 +5,7 @@ date: 2025-05-30
 start_date: 2025-05-30
 end_date: 2025-05-30
 author: "Muhie Al Haimus"
-summary: >
+summary: "Queen Mary Brings Back a Trophy to the Electronics Lab"
 
 featured: true
 thumbnail: "assets/projects/unibots/thumbnail.png"
