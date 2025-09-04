@@ -42,17 +42,26 @@ title: "Our Team"
       if (!data) return '<p>Team data not available.</p>';
       
       const renderMember = (member) => {
-        const filename = member.name.toLowerCase().replace(/\s+/g, '-');
-        const jpgSrc = `assets/team/${filename}.jpg`;
-        const pngSrc = `assets/team/${filename}.png`;
+        // Use the photo field if specified, otherwise fallback to name-based filename
+        let imageSrc;
+        if (member.photo) {
+          // Remove leading slash if present to make it relative
+          imageSrc = member.photo.startsWith('/') ? member.photo.substring(1) : member.photo;
+        } else {
+          // Fallback to name-based filename
+          const filename = member.name.toLowerCase().replace(/\s+/g, '-');
+          imageSrc = `assets/team/${filename}.jpg`;
+        }
+        
+        const pngSrc = imageSrc.replace(/\.(jpg|jpeg)$/i, '.png');
         const defaultSrc = `assets/team/default.png`;
         
         const memberContent = `
           <div class="member-profile">
-            <img src="${jpgSrc}"
+            <img src="${imageSrc}"
                  alt="${member.name}"
                  title="${member.role || ''}"
-                 onerror="if(this.src.includes('.jpg')){this.src='${pngSrc}';}else{this.onerror=null;this.src='${defaultSrc}';}">
+                 onerror="if(this.src !== '${defaultSrc}'){this.src='${defaultSrc}';}">
           </div>
           <div class="member-info">
             ${member.role ? `<h3>${member.role}</h3>` : ''}
