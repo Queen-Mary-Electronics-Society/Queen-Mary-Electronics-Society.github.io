@@ -1,8 +1,20 @@
 /* Team Page Specific Styles */
 
+
+:root {
+  --sponsor-green: #0eca33;
+  --sponsor-green-dark: #086219;
+  --sponsor-green-light: #10b981;
+  --accent-bronze: #cd7f32;
+  --accent-silver: #c0c0c0;
+  --accent-gold: #fbbf24;
+  --complement-blue: #1e40af;
+  --complement-purple: #7c3aed;
+}
+
 /* Team Hero Section */
 .team-hero {
-  background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
+    background: linear-gradient(135deg, var(--sponsor-green) 0%, var(--sponsor-green-dark) 100%);
   color: var(--text-bright);
   padding: 80px 32px;
   text-align: center;
