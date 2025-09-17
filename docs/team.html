@@ -1,18 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Redirecting to Our Team</title>
-  <noscript>
-    <meta http-equiv="refresh" content="0;url=team/2024-2025/">
-  </noscript>
-</head>
-<body>
-  <script type="module">
-    import { teamData } from './js/team.js';
-    const year = teamData.currentYear;
-    window.location.replace(`team/${year}/`);
-  </script>
-  <p>Redirecting to the current team...</p>
-</body>
-</html> 
+---
+layout: default
+title: "Our Team"
+---
+
+<link rel="stylesheet" href="styles/team.css">
+
+<section class="team-hero">
+  <div class="hero-content">
+    <h1>Meet Our Team</h1>
+    <p>The passionate individuals driving innovation at QMES</p>
+  </div>
+</section>
+
+<section class="team-section">
+  <div class="centred-content">
+    <h2 id="team-title">Our 2024/2025 Committee</h2>
+    <div id="team-content" class="team-content-wrapper">
+      <!-- Team content will be loaded dynamically here -->
+      <div class="loading">Loading team data...</div>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  // Team data management (inline version)
+  const teamData = {
+    currentYear: '2024-2025',
+    
+    loadTeamData: async (year) => {
+      try {
+        const response = await fetch(`team/data/${year}.json`);
+        if (!response.ok) throw new Error(`Failed to fetch team data for ${year}`);
+        return await response.json();
+      } catch (error) {
+        console.error(`Error loading team data for ${year}:`, error);
+        return null;
+      }
+    },
+    
+    renderTeamHierarchy: (data) => {
+      if (!data) return '<p>Team data not available.</p>';
+      
+      const renderMember = (member) => {
+        // Use the photo field if specified, otherwise fallback to name-based filename
+        let imageSrc;
+        if (member.photo) {
+          // Remove leading slash if present to make it relative
+          imageSrc = member.photo.startsWith('/') ? member.photo.substring(1) : member.photo;
+        } else {
+          // Fallback to name-based filename
+          const filename = member.name.toLowerCase().replace(/\s+/g, '-');
+          imageSrc = `assets/team/${filename}.jpg`;
+        }
+        
+        const pngSrc = imageSrc.replace(/\.(jpg|jpeg)$/i, '.png');
+        const defaultSrc = `assets/team/default.png`;
+        
+        const memberContent = `
+          <div class="member-profile">
+            <img src="${imageSrc}"
+                 alt="${member.name}"
+                 title="${member.role || ''}"
+                 onerror="if(this.src !== '${defaultSrc}'){this.src='${defaultSrc}';}">
+          </div>
+          <div class="member-info">
+            ${member.role ? `<h3>${member.role}</h3>` : ''}
+            <p>${member.name}</p>
+          </div>
+        `;
+        
+        return member.link 
+          ? `<a href="${member.link}" target="_blank" rel="noopener noreferrer" class="team-member-link">
+              <div class="team-member">
+                ${memberContent}
+              </div>
+             </a>`
+          : `<div class="team-member">
+              ${memberContent}
+             </div>`;
+      };
+      
+      const renderGroup = (groupName, members) => {
+        return `
+          <div class="role-group">
+            <h2>${groupName}</h2>
+            <div class="members-grid">
+              ${members.map(renderMember).join('')}
+            </div>
+          </div>
+        `;
+      };
+      
+      return Object.entries(data.groups || data.roles)
+        .map(([name, members]) => renderGroup(name, members))
+        .join('');
+    }
+  };
+
+  // Load and display team data
+  document.addEventListener('DOMContentLoaded', async () => {
+    const teamContentEl = document.getElementById('team-content');
+    
+    try {
+      const data = await teamData.loadTeamData('2024-2025');
+      if (data) {
+        teamContentEl.innerHTML = teamData.renderTeamHierarchy(data);
+      } else {
+        teamContentEl.innerHTML = '<p>Team data not available for this year.</p>';
+      }
+    } catch (error) {
+      console.error('Error loading team:', error);
+      teamContentEl.innerHTML = '<p>Error loading team data. Please try again later.</p>';
+    }
+  });
+</script> 

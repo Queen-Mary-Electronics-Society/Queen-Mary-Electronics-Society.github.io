@@ -1,0 +1,543 @@
+/* Sponsor Page Specific Styles */
+
+/* Color Variables for Green Theme */
+:root {
+  --sponsor-green: #0eca33;
+  --sponsor-green-dark: #086219;
+  --sponsor-green-light: #10b981;
+  --accent-bronze: #cd7f32;
+  --accent-silver: #c0c0c0;
+  --accent-gold: #fbbf24;
+  --complement-blue: #1e40af;
+  --complement-purple: #7c3aed;
+}
+
+/* Hero Section */
+.sponsor-hero {
+  background: linear-gradient(135deg, var(--sponsor-green) 0%, var(--sponsor-green-dark) 100%);
+  color: var(--text-bright);
+  padding: 80px 32px;
+  text-align: center;
+  position: relative;
+}
+
+.sponsor-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../assets/hero-bg.jpg') center/cover;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sponsor-hero h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.sponsor-hero p {
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+/* Intro Section */
+.sponsor-intro {
+  padding: 80px 32px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.sponsor-intro h2 {
+  text-align: center;
+  margin-bottom: 48px;
+  font-size: 36px;
+  color: var(--dark);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 48px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.intro-item {
+  text-align: center;
+  padding: 32px 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.intro-item:hover {
+  transform: translateY(-8px);
+}
+
+.intro-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--sponsor-green), var(--sponsor-green-dark));
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.intro-icon img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+}
+
+.intro-item h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: var(--dark);
+}
+
+.intro-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Sponsorship Tiers */
+.sponsorship-tiers {
+  padding: 80px 32px;
+  background: white;
+}
+
+.sponsorship-tiers h2 {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 36px;
+  color: var(--dark);
+}
+
+.tiers-subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 64px;
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tier-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.tier-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+.tier-card.featured {
+  transform: scale(1.05);
+  border: 3px solid var(--sponsor-green);
+}
+
+.tier-card.featured:hover {
+  transform: scale(1.05) translateY(-8px);
+}
+
+.tier-ribbon {
+  position: absolute;
+  top: 20px;
+  right: -40px;
+  background: var(--sponsor-green);
+  color: white;
+  padding: 8px 40px;
+  font-size: 14px;
+  font-weight: bold;
+  transform: rotate(45deg);
+  z-index: 10;
+}
+
+.tier-header {
+  padding: 32px 24px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.bronze .tier-header {
+  background: linear-gradient(135deg, var(--accent-bronze), #8b4513);
+  color: white;
+}
+
+.silver .tier-header {
+  background: linear-gradient(135deg, var(--accent-silver), #6b7280);
+  color: white;
+}
+
+.gold .tier-header {
+  background: linear-gradient(135deg, var(--accent-gold), #f59e0b);
+  color: white;
+}
+
+.tier-header h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.tier-price {
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.tier-benefits {
+  padding: 32px 24px;
+}
+
+.tier-benefits h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--dark);
+  font-weight: bold;
+}
+
+.tier-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tier-benefits li {
+  padding: 8px 0;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.tier-footer {
+  padding: 24px;
+  border-top: 1px solid #eee;
+}
+
+.sponsor-btn {
+  display: block;
+  width: 100%;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.bronze-btn {
+  background: linear-gradient(135deg, var(--accent-bronze), #8b4513);
+  color: white;
+}
+
+.bronze-btn:hover {
+  background: linear-gradient(135deg, #8b4513, #654321);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.silver-btn {
+  background: linear-gradient(135deg, var(--accent-silver), #6b7280);
+  color: white;
+}
+
+.silver-btn:hover {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.gold-btn {
+  background: linear-gradient(135deg, var(--accent-gold), #f59e0b);
+  color: white;
+}
+
+.gold-btn:hover {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Benefits Section */
+.sponsor-benefits {
+  padding: 80px 32px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.sponsor-benefits h2 {
+  text-align: center;
+  margin-bottom: 64px;
+  font-size: 36px;
+  color: var(--dark);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-4px);
+}
+
+.benefit-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.benefit-item h3 {
+  padding: 24px 24px 16px;
+  font-size: 20px;
+  color: var(--dark);
+  margin: 0;
+}
+
+.benefit-item p {
+  padding: 0 24px 24px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Stats Section */
+.sponsor-stats {
+  padding: 80px 32px;
+  background: var(--dark);
+  color: var(--text-bright);
+}
+
+.sponsor-stats h2 {
+  text-align: center;
+  margin-bottom: 64px;
+  font-size: 36px;
+  color: var(--text-bright);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 48px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--sponsor-green);
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Testimonial Section */
+.sponsor-testimonial {
+  padding: 80px 32px;
+  background: linear-gradient(135deg, var(--sponsor-green), var(--sponsor-green-dark));
+  color: var(--text-bright);
+}
+
+.sponsor-testimonial blockquote {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.6;
+  font-style: italic;
+  border: none;
+  padding: 0;
+}
+
+.sponsor-testimonial blockquote p {
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* CTA Section */
+.sponsor-cta {
+  padding: 80px 32px;
+  background: white;
+  text-align: center;
+}
+
+.sponsor-cta h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+  color: var(--dark);
+}
+
+.sponsor-cta p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 48px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primary-btn {
+  padding: 16px 32px;
+  background: var(--sponsor-green);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: var(--sponsor-green-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  padding: 16px 32px;
+  background: transparent;
+  color: var(--sponsor-green);
+  text-decoration: none;
+  border: 2px solid var(--sponsor-green);
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background: var(--sponsor-green);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sponsor-hero h1 {
+    font-size: 36px;
+  }
+
+  .sponsor-hero p {
+    font-size: 18px;
+  }
+
+  .intro-grid,
+  .tiers-grid,
+  .benefits-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tier-card.featured {
+    transform: none;
+  }
+
+  .tier-card.featured:hover {
+    transform: translateY(-8px);
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+
+  .sponsor-testimonial blockquote {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-hero,
+  .sponsor-intro,
+  .sponsorship-tiers,
+  .sponsor-benefits,
+  .sponsor-stats,
+  .sponsor-testimonial,
+  .sponsor-cta {
+    padding: 48px 16px;
+  }
+
+  .tiers-grid {
+    gap: 24px;
+  }
+
+  .tier-header h3 {
+    font-size: 24px;
+  }
+
+  .tier-price {
+    font-size: 20px;
+  }
+}
+
+/* Utility Classes */
+.centred-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (max-width: 768px) {
+  .centred-content {
+    padding: 0 16px;
+  }
+}
