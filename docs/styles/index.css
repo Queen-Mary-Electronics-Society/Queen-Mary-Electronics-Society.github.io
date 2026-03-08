@@ -192,6 +192,7 @@ section{
 .sponsor-item{
   display: flex;
   flex-direction: column;
+  margin-top:auto;
   margin:auto;
 }
 
