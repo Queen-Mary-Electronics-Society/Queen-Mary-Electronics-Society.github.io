@@ -360,6 +360,16 @@ section{
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+
+  /* Change cards positioning */
+  .cta-grid{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  .cta-card.contact{
+    aspect-ratio: 1046/465;
+  }
 }
 
 @media (max-width: 480px) {
