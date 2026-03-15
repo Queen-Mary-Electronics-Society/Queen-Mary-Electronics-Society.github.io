@@ -183,8 +183,8 @@ section{
 .sponsor-grid {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  /*   grid-template-columns: repeat(4, 1fr); */
   gap: 32px;
   text-align: center;
 }
@@ -197,9 +197,16 @@ section{
 }
 
 .sponsor-item img {
-  width: 100%;
-  max-width: 150px;
   margin-bottom: 16px;
+}
+
+.vertical-logo img{
+  max-width: 150px;
+}
+
+.horizontal-logo img{
+  max-width: auto;
+  max-height: 80px;
 }
 
 .sponsors h2 {
