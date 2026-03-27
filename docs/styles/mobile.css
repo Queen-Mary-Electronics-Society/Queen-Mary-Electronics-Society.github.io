@@ -1,0 +1,4 @@
+.sponsor-grid {
+  display: flex;
+  flex-direction: row;
+}
