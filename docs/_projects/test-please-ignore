@@ -1,0 +1,21 @@
+---
+layout: project
+title: "Making progress on the website..."
+date: 2025-03-27
+start_date: 2026-03-27
+end_date: 2026-03-29
+author: "Avni and Sahal"
+summary: "We are making new blog posts!"
+
+featured: true
+thumbnail: "assets/projects/unibots/thumbnail.png"
+tags:
+  - Test
+  - Fun
+---
+
+The actual juice!
+
+text
+
+Bye :)
