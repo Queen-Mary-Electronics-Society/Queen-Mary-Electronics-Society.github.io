@@ -1,0 +1,50 @@
+{
+    "year": "2024-2025",
+    "groups": {
+        "Our Committee": [
+            {
+                "name": "Max Olczyk",
+                "role": "President",
+                "photo": "/assets/team/",
+                "link": ""
+            },
+            {
+                "name": "Avni Dhokia",
+                "role": "Treasurer",
+                "photo": "/assets/team/AvniDhokia.png",
+                "link": "https://avnidhokia.github.io/"
+            },
+            {
+                "name": "Zhang Lin",
+                "role": "Secretary",
+                "photo": "/assets/team/ZhangLin.png"
+            },
+            {
+                "name": "Brandon Rutagamirwa",
+                "role": "Postgraduate Manager",
+                "photo": ""
+            },
+            {
+                "name": "Marlon Pires",
+                "role": "Website Manager",
+                "photo": ""
+            },
+            {
+                "name": "Henry Sharp",
+                "role": "Sponsorship Manager",
+                "photo": ""
+            },
+            {
+                "name": "Atra",
+                "role": "Social Media Manager",
+                "photo": "/assets/team/Atra.png",
+                "link": "https://github.com/SahalShaParveen"
+            },
+            {
+                "name": "Imen",
+                "role": "UAS Leads",
+                "photo": ""
+            }
+        ]
+    }
+}
