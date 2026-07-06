@@ -20,21 +20,6 @@
                 "photo": "/assets/team/ZhangLin.png"
             },
             {
-                "name": "Brandon Rutagamirwa",
-                "role": "Postgraduate Manager",
-                "photo": ""
-            },
-            {
-                "name": "Marlon Pires",
-                "role": "Website Manager",
-                "photo": ""
-            },
-            {
-                "name": "Henry Sharp",
-                "role": "Sponsorship Manager",
-                "photo": ""
-            },
-            {
                 "name": "Atra",
                 "role": "Social Media Manager",
                 "photo": "/assets/team/Atra.png",
@@ -45,6 +30,22 @@
                 "role": "Resource Manager",
                 "photo": "/assets/team/KomonHayashi.png",
                 "link": "www.linkedin.com/in/komon-hayashi-712353322"
+            },
+            {
+                "name": "Terry Zikusoka",
+                "role": "Events Planner",
+                "photo": "",
+                "link": "https://www.linkedin.com/in/terrence-zikusoka-066013244/"
+            },
+            {
+                "name": "Henry Sharp",
+                "role": "",
+                "photo": ""
+            },
+            {
+                "name": "Marlon Pires",
+                "role": "",
+                "photo": ""
             }
         ]
     }
