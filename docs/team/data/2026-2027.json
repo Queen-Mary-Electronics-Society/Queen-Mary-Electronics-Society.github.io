@@ -1,0 +1,52 @@
+{
+    "year": "2024-2025",
+    "groups": {
+        "Our Committee": [
+            {
+                "name": "Max Olczyk",
+                "role": "President",
+                "photo": "/assets/team/",
+                "link": ""
+            },
+            {
+                "name": "Avni Dhokia",
+                "role": "Treasurer",
+                "photo": "/assets/team/AvniDhokia.png",
+                "link": "https://avnidhokia.github.io/"
+            },
+            {
+                "name": "Zhang Lin",
+                "role": "Secretary",
+                "photo": "/assets/team/ZhangLin.png"
+            },
+            {
+                "name": "Atra",
+                "role": "Social Media Manager",
+                "photo": "/assets/team/Atra.png",
+                "link": "https://github.com/SahalShaParveen"
+            },
+            {
+                "name": "Komon Hayashi",
+                "role": "Resource Manager",
+                "photo": "/assets/team/KomonHayashi.png",
+                "link": "www.linkedin.com/in/komon-hayashi-712353322"
+            },
+            {
+                "name": "Terry Zikusoka",
+                "role": "Events Planner",
+                "photo": "",
+                "link": "https://www.linkedin.com/in/terrence-zikusoka-066013244/"
+            },
+            {
+                "name": "Henry Sharp",
+                "role": "",
+                "photo": ""
+            },
+            {
+                "name": "Marlon Pires",
+                "role": "",
+                "photo": ""
+            }
+        ]
+    }
+}
