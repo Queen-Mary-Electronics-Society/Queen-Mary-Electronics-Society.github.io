@@ -6,7 +6,7 @@ start_date: 2024-01-30
 end_date: null
 author: "Ayman"
 summary: "Build and program custom quadcopter drones, learning about flight dynamics, control systems, and aerial robotics."
-featured: true
+featured: false
 thumbnail: "assets/projects/drone-building/thumbnail.jpeg"
 tags:
   - drones
