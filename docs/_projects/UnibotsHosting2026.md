@@ -7,7 +7,7 @@ end_date: 2026-07-07
 author: "Atra"
 summary: "QMUL hosts the first day of UniBots 2026"
 featured: true
-thumbnail: "assets/projects/Unibots2026/thumbnail.jpg"
+thumbnail: "assets/projects/Unibots2026/thumbnail.JPG"
 tags:
   - electronics
   - programming
