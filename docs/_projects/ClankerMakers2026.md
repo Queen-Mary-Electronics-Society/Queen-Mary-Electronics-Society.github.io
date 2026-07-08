@@ -7,7 +7,7 @@ end_date: 2026-07-08
 author: "Atra"
 summary: "Team ClankerMakers represented QMUL by competing in Unibots 2026"
 featured: true
-thumbnail: "assets/projects/ClankerMakers2026/thumbnail.jpg"
+thumbnail: "assets/projects/ClankerMakers2026/thumbnail.JPG"
 tags:
   - electronics
   - programming
