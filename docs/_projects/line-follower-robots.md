@@ -6,7 +6,7 @@ start_date: 2024-12-23
 end_date: 2024-12-23
 author: "Muhie Al Haimus"
 summary: "A hands-on project where students build autonomous robots without the use of microcontrollers."
-featured: true
+featured: false
 thumbnail: "assets/projects/line-follower/thumbnail.jpeg"
 tags:
   - robotics

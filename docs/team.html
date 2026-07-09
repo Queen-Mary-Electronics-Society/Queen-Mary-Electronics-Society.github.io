@@ -14,7 +14,7 @@ title: "Our Team"
 
 <section class="team-section">
   <div class="centred-content">
-    <h2 id="team-title">Our 2024/2025 Committee</h2>
+    <h2 id="team-title">Our 2026/27 Committee</h2>
     <div id="team-content" class="team-content-wrapper">
       <!-- Team content will be loaded dynamically here -->
       <div class="loading">Loading team data...</div>
@@ -24,9 +24,11 @@ title: "Our Team"
 
 <script type="module">
   // Team data management (inline version)
+  const CURRENT_YEAR = '2026-2027';
+
   const teamData = {
-    currentYear: '2024-2025',
-    
+    currentYear: CURRENT_YEAR,
+
     loadTeamData: async (year) => {
       try {
         const response = await fetch(`team/data/${year}.json`);
@@ -37,10 +39,10 @@ title: "Our Team"
         return null;
       }
     },
-    
+
     renderTeamHierarchy: (data) => {
       if (!data) return '<p>Team data not available.</p>';
-      
+
       const renderMember = (member) => {
         // Use the photo field if specified, otherwise fallback to name-based filename
         let imageSrc;
@@ -52,10 +54,10 @@ title: "Our Team"
           const filename = member.name.toLowerCase().replace(/\s+/g, '-');
           imageSrc = `assets/team/${filename}.jpg`;
         }
-        
+
         const pngSrc = imageSrc.replace(/\.(jpg|jpeg)$/i, '.png');
         const defaultSrc = `assets/team/default.png`;
-        
+
         const memberContent = `
           <div class="member-profile">
             <img src="${imageSrc}"
@@ -68,8 +70,8 @@ title: "Our Team"
             <p>${member.name}</p>
           </div>
         `;
-        
-        return member.link 
+
+        return member.link
           ? `<a href="${member.link}" target="_blank" rel="noopener noreferrer" class="team-member-link">
               <div class="team-member">
                 ${memberContent}
@@ -79,7 +81,7 @@ title: "Our Team"
               ${memberContent}
              </div>`;
       };
-      
+
       const renderGroup = (groupName, members) => {
         return `
           <div class="role-group">
@@ -90,7 +92,7 @@ title: "Our Team"
           </div>
         `;
       };
-      
+
       return Object.entries(data.groups || data.roles)
         .map(([name, members]) => renderGroup(name, members))
         .join('');
@@ -100,9 +102,9 @@ title: "Our Team"
   // Load and display team data
   document.addEventListener('DOMContentLoaded', async () => {
     const teamContentEl = document.getElementById('team-content');
-    
+
     try {
-      const data = await teamData.loadTeamData('2024-2025');
+      const data = await teamData.loadTeamData(CURRENT_YEAR);
       if (data) {
         teamContentEl.innerHTML = teamData.renderTeamHierarchy(data);
       } else {
@@ -113,4 +115,4 @@ title: "Our Team"
       teamContentEl.innerHTML = '<p>Error loading team data. Please try again later.</p>';
     }
   });
-</script> 
+</script>

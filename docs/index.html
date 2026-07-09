@@ -4,6 +4,7 @@ title: "Home"
 ---
 
 <link rel="stylesheet" href="styles/index.css">
+<link rel="stylesheet" media="screen and (max-width: 750px)" href="styles/mobile.css">
 
 <section class="hero">
   <div class="hero-label">
@@ -24,20 +25,21 @@ title: "Home"
     <div class="about-text">
       <h2 class="section-header">Who are we?</h2>
       <p>
-          Founded in 2024, the Queen Mary Electronics Society has quickly grown into one of the largest and most inclusive societies on campus. Built on the dedication of its members, the society offers a welcoming space for anyone interested in electronics, from beginners to experts.
+        Founded in 2024, the Queen Mary Electronics Society has quickly grown into one of the largest and most inclusive
+        societies on campus. Built on the dedication of its members, the society offers a welcoming space for anyone
+        interested in electronics, from beginners to experts.
 
-In just its first year, the society achieved national recognition by placing third in Unibots 2025, showcasing the talent and teamwork of its community. Through workshops, projects, and competitions, the society continues to inspire innovation and collaboration, making it a thriving hub of creativity at Queen Mary.
-                                                                                                                                                                                          
-     
-     
-     
-              </p>
+        In just its first year, the society achieved national recognition by placing third in Unibots 2025, showcasing
+        the talent and teamwork of its community. Through workshops, projects, and competitions, the society continues
+        to inspire innovation and collaboration, making it a thriving hub of creativity at Queen Mary.
+
+
+
+
+      </p>
     </div>
     <div class="about-image">
-      <img
-        class="borded"
-        src="assets/team-photo.JPG"
-        alt="Team working on robotics">
+      <img class="borded" src="assets/team-photo.JPG" alt="Team working on robotics">
     </div>
   </div>
 </section>
@@ -45,25 +47,25 @@ In just its first year, the society achieved national recognition by placing thi
 <section class="projects">
   <h2 class="section-header centred-content">Some of our projects</h2>
   <div class="project-caruselle">
-    {% assign featured_projects = site.projects | where: "featured", true %}
+    {% assign featured_projects = site.projects | where: "featured", true | sort: "start_date" | reverse %}
     {% for project in featured_projects limit: 5 %}
-      <article class="featured-project-card" style="background-image: url({{project.thumbnail}})">
-        <div class="project-short-info">
-          <b>{{ project.title }}</b>
-          <span class="date">
-            {{ project.start_date | date: "%m.%Y" }} -
-            {% if project.end_date %}
-              {{ project.end_date | date: "%m.%Y" }}
-            {% else %}
-              <span class="ongoing-label">ongoing</span>
-            {% endif %}
-          </span>
-        </div>
-        <div class="project-extended-description">
-          {{ project.summary }}
-          <a class="black-button" href="{{project.url}}">Learn More</a>
-        </div>
-      </article>
+    <article class="featured-project-card" style="background-image: url({{project.thumbnail}})">
+      <div class="project-short-info">
+        <b>{{ project.title }}</b>
+        <span class="date">
+          {{ project.start_date | date: "%m.%Y" }} -
+          {% if project.end_date %}
+          {{ project.end_date | date: "%m.%Y" }}
+          {% else %}
+          <span class="ongoing-label">ongoing</span>
+          {% endif %}
+        </span>
+      </div>
+      <div class="project-extended-description">
+        {{ project.summary }}
+        <a class="black-button" href="{{project.url}}">Learn More</a>
+      </div>
+    </article>
     {% endfor %}
   </div>
   <div class="scroll-control">
@@ -86,9 +88,12 @@ In just its first year, the society achieved national recognition by placing thi
       </div>
       <div class="competition-text">
         <p>
-          1.	Engagement: hosting weekly electronics-focused activities for STEM students and anyone curious about the world of electronics. <br>
-          2.	Excellence: competing in at least three national or international electronics-related competitions each year. <br>
-          3.	Outreach: promoting electronics education and inspiring the next generation through workshops and community initiatives. <br>
+          1. Engagement: hosting weekly electronics-focused activities for STEM students and anyone curious about the
+          world of electronics. <br>
+          2. Excellence: competing in at least three national or international electronics-related competitions each
+          year. <br>
+          3. Outreach: promoting electronics education and inspiring the next generation through workshops and community
+          initiatives. <br>
         </p>
       </div>
     </div>
@@ -100,15 +105,15 @@ In just its first year, the society achieved national recognition by placing thi
     <h2 class="section-header">Proudly sponsored by</h2>
   </div>
   <div class="sponsor-grid">
-    <div class="sponsor-item">
+    <div class="sponsor-item vertical-logo">
       <img src="assets/rs_logo.png" alt="Sponsor">
-      <p>RS</p>
+      <p>RS Group</p>
     </div>
-    <div class="sponsor-item">
+    <div class="sponsor-item horizontal-logo">
       <img src="assets/Filamentive_logo.png" alt="Sponsor">
       <p>Filamentive</p>
     </div>
-    <div class="sponsor-item">
+    <div class="sponsor-item horizontal-logo">
       <img src="assets/easy-composites-logo-simple-curves.jpg" alt="Sponsor">
       <a href="https://www.easycomposites.co.uk/">Easy Composites</a>
     </div>
@@ -119,11 +124,7 @@ In just its first year, the society achieved national recognition by placing thi
   <div class="centred-content">
     <h2 class="section-header">Sounds interesting?</h2>
     <div class="cta-grid">
-      <a
-        href="https://www.qmsu.org/groups/26265/"
-        class="cta-card join"
-        target="_blank"
-        rel="noopener noreferrer">
+      <a href="https://www.qmsu.org/groups/26265/" class="cta-card join" target="_blank" rel="noopener noreferrer">
         <div class="cta-content">
           <h3>Join us</h3>
         </div>
@@ -143,7 +144,7 @@ In just its first year, the society achieved national recognition by placing thi
             <img src="assets/pound-icon.svg">
             <img src="assets/pound-icon.svg">
           </div>
-        <!-- animations.js will use these items to make them fall -->
+          <!-- animations.js will use these items to make them fall -->
         </div>
       </a>
       <a href="contact.html" class="cta-card contact">
@@ -154,10 +155,11 @@ In just its first year, the society achieved national recognition by placing thi
           <div class="spawn-objects-container">
             <img src="assets/phone-icon.svg" style="left: 20%; top: 15%; height: 60%;">
             <img src="assets/contract-icon.svg" style="bottom: -15%; left: 5%; height: 70%;">
-            <img src="assets/contract-icon.svg" style="bottom: -30%; right: 20%; height: 70%; transform: rotate(35deg);">
+            <img src="assets/contract-icon.svg"
+              style="bottom: -30%; right: 20%; height: 70%; transform: rotate(35deg);">
             <img src="assets/email-icon.svg" style="top: 0px; right: 10%; height: 50%;">
           </div>
-        <!-- animations.js will use these items to make them fall -->
+          <!-- animations.js will use these items to make them fall -->
         </div>
       </a>
     </div>
@@ -166,16 +168,11 @@ In just its first year, the society achieved national recognition by placing thi
 
 <script src="js/animations.js"></script>
 <script>
-    const containers = document.getElementsByClassName("item-fall-animation");
-    Array.from(containers).forEach((container) => {
-      const anim = new FallingItemsAnimator(container);
-      anim.scatter();
-      container.parentElement.addEventListener("mouseover", anim.play.bind(anim));
-      container.parentElement.addEventListener("mouseout", anim.freeze.bind(anim));
-    })
+  const containers = document.getElementsByClassName("item-fall-animation");
+  Array.from(containers).forEach((container) => {
+    const anim = new FallingItemsAnimator(container);
+    anim.scatter();
+    container.parentElement.addEventListener("mouseover", anim.play.bind(anim));
+    container.parentElement.addEventListener("mouseout", anim.freeze.bind(anim));
+  })
 </script>
-
-
-
-
-

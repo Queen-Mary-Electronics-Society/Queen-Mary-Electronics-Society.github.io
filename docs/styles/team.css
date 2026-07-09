@@ -14,7 +14,7 @@
 
 /* Team Hero Section */
 .team-hero {
-    background: linear-gradient(135deg, var(--sponsor-green) 0%, var(--sponsor-green-dark) 100%);
+  background: linear-gradient(135deg, var(--sponsor-green) 0%, var(--sponsor-green-dark) 100%);
   color: var(--text-bright);
   padding: 80px 32px;
   text-align: center;
@@ -29,7 +29,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('../assets/team-photo.JPG') center/cover;
+  background: url('../assets/TheGang.jpg') center/cover;
   opacity: 0.1;
   z-index: 0;
 }
@@ -118,10 +118,17 @@
   max-width: 300px;
 }
 
+.role-group:first-child .members-grid> :first-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
 .team-member-link {
   text-decoration: none;
   color: inherit;
   display: block;
+  width: 100%;
+  max-width: 300px;
 }
 
 .team-member-link:hover .team-member {
@@ -265,6 +272,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -279,9 +287,26 @@
   animation: fadeIn 0.5s ease-out backwards;
 }
 
-.team-member:nth-child(1) { animation-delay: 0.1s; }
-.team-member:nth-child(2) { animation-delay: 0.2s; }
-.team-member:nth-child(3) { animation-delay: 0.3s; }
-.team-member:nth-child(4) { animation-delay: 0.4s; }
-.team-member:nth-child(5) { animation-delay: 0.5s; }
-.team-member:nth-child(6) { animation-delay: 0.6s; }
+.team-member:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.team-member:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.team-member:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.team-member:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.team-member:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.team-member:nth-child(6) {
+  animation-delay: 0.6s;
+}
