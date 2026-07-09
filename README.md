@@ -7,7 +7,7 @@ To join our society as a student get the Standard Membership on the official [QM
 ## Development
 
 Clone the project, all the website files are in docs folder. 
-If you don't have ruby, you will have to install it. Afterwards you can install bundler and jekyll
+If you don't have ruby, you will have to install it. Afterwards you can install bundler and jekyll.
 
 ```bash
 gem install bundler;
