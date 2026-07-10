@@ -45,7 +45,7 @@ title: "Home"
 </section>
 
 <section class="projects">
-  <h2 class="section-header centred-content">Some of our projects</h2>
+  <h2 class="section-header centred-content">{{site.blog_name.title}}</h2>
   <div class="project-caruselle">
     {% assign featured_projects = site.projects | where: "featured", true | sort: "start_date" | reverse %}
     {% for project in featured_projects limit: 5 %}
@@ -72,7 +72,7 @@ title: "Home"
     <!-- <div class="black-button">
       &lt;
     </div> -->
-    <a href="/projects/" class="black-button">See More Projects</a>
+    <a href="/projects/" class="black-button">See More {{site.blog_name.title}}</a>
     <!-- <div class="black-button">
       &gt;
     </div> -->
