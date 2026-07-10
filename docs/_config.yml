@@ -46,7 +46,7 @@ exclude:
 
 # Additional data
 blog_name:
-  title: "Blog"
+  title: "Blog posts"
   singular: "post"
   plural: "posts"
 
