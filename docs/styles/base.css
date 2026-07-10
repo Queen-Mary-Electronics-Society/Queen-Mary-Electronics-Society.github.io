@@ -34,7 +34,7 @@ body {
 }
 
 /* Global Syle library*/
-.borded{
+.borded {
   border: var(--black) 2px solid;
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -47,11 +47,11 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.date{
+.date {
   font-family: monospace;
 }
 
-.black-button{
+.black-button {
   padding: 10px;
 
   text-align: center;
@@ -60,7 +60,7 @@ body {
   color: var(--text-bright);
 }
 
-.black-button:hover{
+.black-button:hover {
   color: var(--accent-color);
 }
 
@@ -85,7 +85,7 @@ nav {
 
 /* Logo styles */
 .logo img {
-  height: 40px;
+  height: 70px;
   width: auto;
 }
 
@@ -204,6 +204,7 @@ footer a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
   .about-content,
   .competition-content,
   .sponsor-grid,
@@ -281,7 +282,8 @@ footer a:hover {
   padding: 32px 5%;
   max-width: 1400px;
   margin: 0 auto;
-  margin-top: 60px; /* Add margin-top to account for fixed header */
+  margin-top: 60px;
+  /* Add margin-top to account for fixed header */
 }
 
 .projects-page h1 {
@@ -293,7 +295,8 @@ footer a:hover {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 cards per row */
   gap: 24px;
   margin-top: 32px;
 }
@@ -401,19 +404,22 @@ footer a:hover {
 /* Responsive design for project grid */
 @media (max-width: 1200px) {
   .project-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 cards per row */
   }
 }
 
 @media (max-width: 900px) {
   .project-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 cards per row */
   }
 }
 
 @media (max-width: 600px) {
   .project-grid {
-    grid-template-columns: 1fr; /* 1 card per row */
+    grid-template-columns: 1fr;
+    /* 1 card per row */
   }
 }
 
@@ -591,14 +597,14 @@ footer a:hover {
 }
 
 /* Styles for project title on individual pages */
-.project-full > h1 {
+.project-full>h1 {
   font-size: 40px;
   color: #333;
   text-align: center;
   margin-bottom: 8px;
 }
 
-.project-full > .project-meta {
+.project-full>.project-meta {
   margin-bottom: 24px;
   text-align: center;
 }
@@ -912,13 +918,13 @@ footer a:hover {
 }
 
 /* Bootstrap Form Customization */
-.form-floating > .form-control,
-.form-floating > .form-control-plaintext {
+.form-floating>.form-control,
+.form-floating>.form-control-plaintext {
   height: calc(56px + 2px);
   line-height: 1.25;
 }
 
-.form-floating > textarea.form-control {
+.form-floating>textarea.form-control {
   height: 150px !important;
   resize: none;
 }
@@ -979,15 +985,13 @@ footer a:hover {
 }
 
 .social-link:nth-child(3) {
-  background: linear-gradient(
-    45deg,
-    #405de6,
-    #5851db,
-    #833ab4,
-    #c13584,
-    #e1306c,
-    #fd1d1d
-  );
+  background: linear-gradient(45deg,
+      #405de6,
+      #5851db,
+      #833ab4,
+      #c13584,
+      #e1306c,
+      #fd1d1d);
 }
 
 .social-link:nth-child(4) {
@@ -1303,17 +1307,19 @@ footer a:hover {
 
 @media (max-width: 1200px) {
   .project-cards .project-card {
-    flex: 0 0 calc(50% - 16px); /* For 2 cards per view */
+    flex: 0 0 calc(50% - 16px);
+    /* For 2 cards per view */
   }
 }
 
 @media (max-width: 768px) {
   .project-cards .project-card {
-    flex: 0 0 100%; /* For 1 card per view */
+    flex: 0 0 100%;
+    /* For 1 card per view */
   }
 }
 
 /* For Animations */
-.spawn-objects-container{
+.spawn-objects-container {
   display: none;
 }
