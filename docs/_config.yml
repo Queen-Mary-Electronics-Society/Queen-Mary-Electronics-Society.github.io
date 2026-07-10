@@ -45,6 +45,11 @@ exclude:
   - README.md
 
 # Additional data
+blog_name:
+  title: "Blog"
+  singular: "post"
+  plural: "posts"
+
 socialMedia:
   linkedin: "https://www.linkedin.com/company/queen-mary-electronics-society/"
   github: "https://github.com/Queen-Mary-Electronics-Society"
@@ -53,3 +58,4 @@ socialMedia:
 
 contact:
   email: "qmelectronicssociety@qmsu.org" 
+

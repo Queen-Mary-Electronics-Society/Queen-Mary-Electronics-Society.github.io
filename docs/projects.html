@@ -5,12 +5,12 @@ permalink: /projects/
 ---
 
 <main class="projects-page">
-  <h1>Our Projects</h1>
-  
+  <h1>{{ site.blog_name.title }}</h1>
+
   <div class="projects-search">
     <div class="search-bar">
       <div class="search-input-group">
-        <input type="text" id="search-input" placeholder="Search projects...">
+        <input type="text" id="search-input" placeholder="Search {{site.blog_name.plural}}...">
         <button class="search-btn" id="search-btn">Search</button>
       </div>
       <div class="date-filter">
@@ -19,7 +19,7 @@ permalink: /projects/
         <input type="date" id="date-to" placeholder="To">
         <div class="archive-toggle">
           <input type="checkbox" id="show-archived">
-          <label for="show-archived">Show archived projects</label>
+          <label for="show-archived">Show archived {{site.blog_name.plural}}</label>
         </div>
       </div>
     </div>
@@ -28,49 +28,48 @@ permalink: /projects/
   <div class="project-grid" id="project-grid">
     {% assign sorted_projects = site.projects | sort: "date" | reverse %}
     {% for project in sorted_projects %}
-      <article class="project-card" 
-              data-title="{{ project.title | downcase }}"
-              data-date="{{ project.date | date: '%Y-%m-%d' }}"
-              data-archived="{% if project.endDate %}true{% else %}false{% endif %}"
-              data-tags="{{ project.tags | join: ',' | downcase }}">
-        <div class="project-image">
-          <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
-        </div>
-        <div class="project-content">
-          <h2 class="project-title">
-            <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
-          </h2>
-          <div class="project-meta">
-            <time datetime="{{ project.date | date_to_xmlschema }}">
-              {{ project.date | date: "%B %d, %Y" }}
-            </time>
-            {% if project.endDate %}
-              <span class="project-status archived">Archived</span>
-            {% endif %}
-          </div>
-          {% if project.summary %}
-            <p class="project-summary">{{ project.summary }}</p>
+    <article class="project-card" data-title="{{ project.title | downcase }}"
+      data-date="{{ project.date | date: '%Y-%m-%d' }}"
+      data-archived="{% if project.endDate %}true{% else %}false{% endif %}"
+      data-tags="{{ project.tags | join: ',' | downcase }}">
+      <div class="project-image">
+        <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+      </div>
+      <div class="project-content">
+        <h2 class="project-title">
+          <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+        </h2>
+        <div class="project-meta">
+          <time datetime="{{ project.date | date_to_xmlschema }}">
+            {{ project.date | date: "%B %d, %Y" }}
+          </time>
+          {% if project.endDate %}
+          <span class="project-status archived">Archived</span>
           {% endif %}
-          {% if project.tags %}
-            <div class="project-tags">
-              {% for tag in project.tags %}
-                <span class="tag">{{ tag }}</span>
-              {% endfor %}
-            </div>
-          {% endif %}
-          <a href="{{ project.url | relative_url }}" class="read-more">Read More</a>
         </div>
-      </article>
+        {% if project.summary %}
+        <p class="project-summary">{{ project.summary }}</p>
+        {% endif %}
+        {% if project.tags %}
+        <div class="project-tags">
+          {% for tag in project.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <a href="{{ project.url | relative_url }}" class="read-more">Read More</a>
+      </div>
+    </article>
     {% endfor %}
   </div>
 
   <div id="no-results" class="no-results" style="display: none;">
-    <p>No projects found matching your search criteria.</p>
+    <p>No {{site.blog_name.plural}} found matching your search criteria.</p>
   </div>
 </main>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('search-input');
     const searchBtn = document.getElementById('search-btn');
     const dateFrom = document.getElementById('date-from');
@@ -81,36 +80,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const projects = document.querySelectorAll('.project-card');
 
     function filterProjects() {
-        const searchTerm = searchInput.value.toLowerCase();
-        const fromDate = dateFrom.value ? new Date(dateFrom.value) : null;
-        const toDate = dateTo.value ? new Date(dateTo.value) : null;
-        let visibleCount = 0;
+      const searchTerm = searchInput.value.toLowerCase();
+      const fromDate = dateFrom.value ? new Date(dateFrom.value) : null;
+      const toDate = dateTo.value ? new Date(dateTo.value) : null;
+      let visibleCount = 0;
 
-        projects.forEach(project => {
-            const title = project.dataset.title;
-            const date = new Date(project.dataset.date);
-            const isArchived = project.dataset.archived === 'true';
-            const tags = project.dataset.tags.split(',');
+      projects.forEach(project => {
+        const title = project.dataset.title;
+        const date = new Date(project.dataset.date);
+        const isArchived = project.dataset.archived === 'true';
+        const tags = project.dataset.tags.split(',');
 
-            let isVisible = true;
+        let isVisible = true;
 
-            // Search term filter
-            if (searchTerm && !title.includes(searchTerm) && !tags.some(tag => tag.includes(searchTerm))) {
-                isVisible = false;
-            }
+        // Search term filter
+        if (searchTerm && !title.includes(searchTerm) && !tags.some(tag => tag.includes(searchTerm))) {
+          isVisible = false;
+        }
 
-            // Date range filter
-            if (fromDate && date < fromDate) isVisible = false;
-            if (toDate && date > toDate) isVisible = false;
+        // Date range filter
+        if (fromDate && date < fromDate) isVisible = false;
+        if (toDate && date > toDate) isVisible = false;
 
-            // Archive filter
-            if (!showArchived.checked && isArchived) isVisible = false;
+        // Archive filter
+        if (!showArchived.checked && isArchived) isVisible = false;
 
-            project.style.display = isVisible ? '' : 'none';
-            if (isVisible) visibleCount++;
-        });
+        project.style.display = isVisible ? '' : 'none';
+        if (isVisible) visibleCount++;
+      });
 
-        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
     }
 
     searchBtn.addEventListener('click', filterProjects);
@@ -118,5 +117,5 @@ document.addEventListener('DOMContentLoaded', function() {
     dateFrom.addEventListener('change', filterProjects);
     dateTo.addEventListener('change', filterProjects);
     showArchived.addEventListener('change', filterProjects);
-});
-</script> 
+  });
+</script>
