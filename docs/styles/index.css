@@ -390,6 +390,7 @@ section {
   }
 
   .project-caruselle {
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -402,7 +403,7 @@ section {
   }
 
   .featured-project-card {
-    width: calc(100vw - 48px);
+    width: 100%;
     max-width: 400px;
   }
 }
