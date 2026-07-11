@@ -2,3 +2,8 @@
   display: flex;
   flex-direction: column;
 }
+
+.project-caruselle {
+  display: flex;
+  flex-direction: column;
+}
