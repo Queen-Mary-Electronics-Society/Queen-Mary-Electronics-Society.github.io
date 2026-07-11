@@ -396,7 +396,7 @@ section {
     align-items: center;
 
     width: 100%;
-    left: 0;
+    left: auto;
 
     gap: 20px;
     overflow: visible;
