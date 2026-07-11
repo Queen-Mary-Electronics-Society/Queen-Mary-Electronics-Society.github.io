@@ -1,4 +1,4 @@
-:root{
+:root {
   --section-hor-padding: 32px;
 }
 
@@ -41,16 +41,16 @@
 }
 
 /* Sections */
-section{
+section {
   padding: 40px var(--section-hor-padding);
 }
 
-.centred-content{
+.centred-content {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.section-header{
+.section-header {
   margin-bottom: 30px;
 }
 
@@ -71,7 +71,7 @@ section{
   overflow: hidden;
 }
 
-.project-caruselle{
+.project-caruselle {
   display: flex;
   justify-content: center;
 
@@ -87,7 +87,7 @@ section{
   overflow: hidden;
 }
 
-.featured-project-card{
+.featured-project-card {
   width: 400px;
   height: 300px;
 
@@ -108,14 +108,14 @@ section{
   border: var(--black) 1px solid;
 }
 
-.featured-project-card > div{
+.featured-project-card>div {
   z-index: 10;
   padding-left: 15px;
   padding-right: 15px;
   background-color: var(--background-color);
 }
 
-.project-short-info{
+.project-short-info {
   padding-top: 20px;
   padding-bottom: 20px;
 
@@ -126,11 +126,11 @@ section{
   align-items: baseline;
 }
 
-.project-short-info .date{
+.project-short-info .date {
   white-space: nowrap;
 }
 
-.project-extended-description{
+.project-extended-description {
   padding-top: 0px;
   padding-bottom: 0px;
   height: 0%;
@@ -142,19 +142,19 @@ section{
   transition: all 0.5s ease;
 }
 
-.featured-project-card:hover .project-extended-description{
+.featured-project-card:hover .project-extended-description {
   height: 100%;
   padding-bottom: 20px;
 }
 
-.ongoing-label{
+.ongoing-label {
   color: var(--accent-dark);
 }
 
-.scroll-control{
+.scroll-control {
   display: flex;
   justify-content: center;
-  gap:5px;
+  gap: 5px;
 }
 
 /* Competitions Section */
@@ -189,22 +189,22 @@ section{
   text-align: center;
 }
 
-.sponsor-item{
+.sponsor-item {
   display: flex;
   flex-direction: column;
-  margin-top:auto;
-  margin:auto;
+  margin-top: auto;
+  margin: auto;
 }
 
 .sponsor-item img {
   margin-bottom: 16px;
 }
 
-.vertical-logo img{
+.vertical-logo img {
   max-width: 150px;
 }
 
-.horizontal-logo img{
+.horizontal-logo img {
   max-width: auto;
   max-height: 80px;
 }
@@ -238,7 +238,7 @@ section{
   transition: transform 0.3s ease;
 }
 
-.cta-background{
+.cta-background {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -246,7 +246,8 @@ section{
   height: 100%;
   width: 100%;
 }
-.cta-background > *{
+
+.cta-background>* {
   position: absolute;
   z-index: 0;
 }
@@ -280,7 +281,7 @@ section{
   z-index: 15;
 
   position: relative;
-  
+
   width: 100%;
   height: 100%;
 }
@@ -291,15 +292,15 @@ section{
   margin-top: 8px;
 }
 
-.robot-arm-left{
-  bottom: -7px; 
-  left: 0px; 
+.robot-arm-left {
+  bottom: -7px;
+  left: 0px;
   height: 95%;
 
   transition: translate 0.2s ease;
 }
 
-.robot-arm-right{
+.robot-arm-right {
   bottom: -25%;
   left: 50%;
   height: 80%;
@@ -308,16 +309,17 @@ section{
   transition: translate 0.3s ease;
 }
 
-.cta-card:hover .robot-arm-left{
+.cta-card:hover .robot-arm-left {
   translate: 0px -30px;
 }
 
-.cta-card:hover .robot-arm-right{
+.cta-card:hover .robot-arm-right {
   translate: 0px -30px;
 }
 
 /* Desktop/Tablet Responsive Styles for larger images */
 @media (min-width: 769px) {
+
   .about-image img.borded,
   .competition-content .about-image img.borded {
     min-height: 300px;
@@ -327,26 +329,27 @@ section{
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+
   /* Make hero section more mobile-friendly */
   .hero-label {
     margin-left: 20px;
     margin-right: 20px;
   }
-  
+
   .hero-title {
     font-size: 48px;
   }
-  
+
   .hero-subtitle {
     font-size: 24px;
   }
-  
+
   /* Make about section stack vertically on mobile */
   .about-content {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  
+
   /* Make bordered images larger on mobile */
   .about-image img.borded,
   .competition-content .about-image img.borded {
@@ -357,18 +360,19 @@ section{
     object-fit: cover;
     border-radius: 12px;
   }
-  
+
   /* Make competition section stack vertically */
   .competition-content {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  
+
   /* Ensure images in competition section are prominent */
   .competition-content .about-image {
-    order: -1; /* Move image to top on mobile */
+    order: -1;
+    /* Move image to top on mobile */
   }
-  
+
   /* Make sponsor grid more mobile-friendly */
   .sponsor-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -376,30 +380,48 @@ section{
   }
 
   /* Change cards positioning */
-  .cta-grid{
+  .cta-grid {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: auto auto;
   }
 
-  .cta-card.contact{
+  .cta-card.contact {
     aspect-ratio: 1046/465;
+  }
+
+  .project-caruselle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    left: 0;
+
+    gap: 20px;
+    overflow: visible;
+  }
+
+  .featured-project-card {
+    width: calc(100vw - 48px);
+    max-width: 400px;
   }
 }
 
 @media (max-width: 480px) {
+
   /* Even smaller screens - make images even more prominent */
   .about-image img.borded,
   .competition-content .about-image img.borded {
     min-height: 200px;
     border-radius: 12px;
   }
-  
+
   /* Single column for sponsors on very small screens */
   .sponsor-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  
+
   /* Reduce section padding on small screens */
   section {
     padding: 24px 16px;
