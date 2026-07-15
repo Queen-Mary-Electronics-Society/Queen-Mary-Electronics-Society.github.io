@@ -322,7 +322,7 @@ section {
 }
 
 .robot-arm-left {
-  bottom: -7px;
+  bottom: -30px;
   left: 0px;
   height: 95%;
 
@@ -330,10 +330,11 @@ section {
 }
 
 .robot-arm-right {
-  bottom: -25%;
+  bottom: -35%;
   left: 50%;
   height: 80%;
   transform: scaleX(-1);
+
 
   transition: translate 0.3s ease;
 }
