@@ -67,7 +67,7 @@ section {
 
 /* Projects Section */
 .projects {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   overflow: hidden;
 }
 
@@ -158,11 +158,40 @@ section {
 }
 
 /* Competitions Section */
+.competitions {
+  background-color: #f5f5f5;
+}
+
 .competition-content {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  align-items: center;
+}
+
+.competition-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #e2e2e2;
+  padding: 24px;
+  border-radius: 16px;
+
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.competition-card img {
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .competition-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 .unibots-logo img {
@@ -171,7 +200,7 @@ section {
 }
 
 .competitions h2 {
-  margin-bottom: 48px;
+  margin-bottom: 18px;
 }
 
 /* Sponsors Section */
@@ -293,7 +322,7 @@ section {
 }
 
 .robot-arm-left {
-  bottom: -7px;
+  bottom: -30px;
   left: 0px;
   height: 95%;
 
@@ -301,10 +330,11 @@ section {
 }
 
 .robot-arm-right {
-  bottom: -25%;
+  bottom: -35%;
   left: 50%;
   height: 80%;
   transform: scaleX(-1);
+
 
   transition: translate 0.3s ease;
 }
