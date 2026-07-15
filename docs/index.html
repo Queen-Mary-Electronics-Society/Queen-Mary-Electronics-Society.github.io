@@ -44,41 +44,6 @@ title: "Home"
   </div>
 </section>
 
-<section class="projects">
-  <h2 class="section-header centred-content">{{site.blog_name.title}}</h2>
-  <div class="project-caruselle">
-    {% assign featured_projects = site.projects | where: "featured", true | sort: "start_date" | reverse %}
-    {% for project in featured_projects limit: 5 %}
-    <article class="featured-project-card" style="background-image: url({{project.thumbnail}})">
-      <div class="project-short-info">
-        <b>{{ project.title }}</b>
-        <span class="date">
-          {{ project.start_date | date: "%m.%Y" }} -
-          {% if project.end_date %}
-          {{ project.end_date | date: "%m.%Y" }}
-          {% else %}
-          <span class="ongoing-label">ongoing</span>
-          {% endif %}
-        </span>
-      </div>
-      <div class="project-extended-description">
-        {{ project.summary }}
-        <a class="black-button" href="{{project.url}}">Learn More</a>
-      </div>
-    </article>
-    {% endfor %}
-  </div>
-  <div class="scroll-control">
-    <!-- <div class="black-button">
-      &lt;
-    </div> -->
-    <a href="/projects/" class="black-button">See More {{site.blog_name.title}}</a>
-    <!-- <div class="black-button">
-      &gt;
-    </div> -->
-  </div>
-</section>
-
 <section class="competitions">
   <div class="centred-content">
     <h2 class="section-header">What do we do?</h2>
@@ -115,6 +80,43 @@ title: "Home"
     </div>
   </div>
 </section>
+
+
+<section class="projects">
+  <h2 class="section-header centred-content">{{site.blog_name.title}}</h2>
+  <div class="project-caruselle">
+    {% assign featured_projects = site.projects | where: "featured", true | sort: "start_date" | reverse %}
+    {% for project in featured_projects limit: 5 %}
+    <article class="featured-project-card" style="background-image: url({{project.thumbnail}})">
+      <div class="project-short-info">
+        <b>{{ project.title }}</b>
+        <span class="date">
+          {{ project.start_date | date: "%m.%Y" }} -
+          {% if project.end_date %}
+          {{ project.end_date | date: "%m.%Y" }}
+          {% else %}
+          <span class="ongoing-label">ongoing</span>
+          {% endif %}
+        </span>
+      </div>
+      <div class="project-extended-description">
+        {{ project.summary }}
+        <a class="black-button" href="{{project.url}}">Learn More</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <div class="scroll-control">
+    <!-- <div class="black-button">
+      &lt;
+    </div> -->
+    <a href="/projects/" class="black-button">See More {{site.blog_name.title}}</a>
+    <!-- <div class="black-button">
+      &gt;
+    </div> -->
+  </div>
+</section>
+
 
 <section class="sponsors">
   <div class="centred-content">

@@ -67,7 +67,7 @@ section {
 
 /* Projects Section */
 .projects {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   overflow: hidden;
 }
 
@@ -158,6 +158,10 @@ section {
 }
 
 /* Competitions Section */
+.competitions {
+  background-color: #f5f5f5;
+}
+
 .competition-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
