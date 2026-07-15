@@ -168,6 +168,12 @@ section {
   display: flex;
   flex-direction: column;
   text-align: center;
+  background-color: #eeeeee;
+  padding: 24px;
+  border-radius: 16px;
+
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .competition-card img {
