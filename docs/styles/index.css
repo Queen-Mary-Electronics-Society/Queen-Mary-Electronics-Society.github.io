@@ -160,9 +160,28 @@ section {
 /* Competitions Section */
 .competition-content {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  align-items: center;
+}
+
+.competition-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.competition-card img {
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .competition-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 .unibots-logo img {
